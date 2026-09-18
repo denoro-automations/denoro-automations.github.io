@@ -1,0 +1,60 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+body{width:620px;padding:40px 44px}
+.head{display:flex;align-items:flex-start;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.head .t{flex:1}
+h1{font-size:24px;font-weight:400;color:var(--ink);line-height:1.2}
+.head .sub{color:var(--muted);font-size:12.5px;margin-top:5px}
+.head .mark{margin-top:3px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.kpi div{padding:18px 0}
+.kpi div+div{border-left:1px solid var(--rule-soft);padding-left:16px}
+.kpi b{display:block;font-size:24px;font-weight:400;color:var(--ink);line-height:1.15}
+.kpi .d{font-size:11.5px;margin-top:4px;white-space:nowrap}
+.up2{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block;margin-top:4px}
+h2{font-size:12.5px;font-weight:600;color:var(--ink);margin:26px 0 12px}
+.chart{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;align-items:end;margin-bottom:8px}
+.chart div{text-align:center}
+.chart i{display:block;background:var(--accent);border-radius:3px 3px 0 0;opacity:.85}
+.chart .l{font-size:10.5px;color:var(--faint);margin-top:8px;padding-bottom:2px}
+.chart .v{font-size:10.5px;color:var(--muted);margin-bottom:5px}
+td,th{font-size:12.5px}
+td.r,th.r{text-align:right}
+td{padding:10px 0}
+.tag{color:var(--muted)}
+.foot{margin-top:30px;padding-top:12px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;color:var(--faint);font-size:11px}
+</style>
+<div class="head"><span class="mark">D</span><div class="t"><h1 class="serif">Weekly report · Moda Sol</h1>
+  <p class="sub num">8–14 September 2026 · generated Monday at 7:00</p></div></div>
+<div class="kpi num">
+  <div><b class="serif">€8,412</b><span class="up2">sales</span><span class="d" style="color:var(--ok)">+12.4% vs previous</span></div>
+  <div><b class="serif">132</b><span class="up2">orders</span><span class="d" style="color:var(--ok)">+9 orders</span></div>
+  <div><b class="serif">€63.73</b><span class="up2">average order</span><span class="d" style="color:var(--muted)">+€1.80</span></div>
+  <div><b class="serif">2.1%</b><span class="up2">refunds</span><span class="d" style="color:var(--muted)">3 orders</span></div>
+</div>
+<h2>Sales per day</h2>
+<div class="chart num">
+  <div><div class="v">940</div><i style="height:62px"></i><div class="l">Mon</div></div>
+  <div><div class="v">1,120</div><i style="height:74px"></i><div class="l">Tue</div></div>
+  <div><div class="v">1,010</div><i style="height:67px"></i><div class="l">Wed</div></div>
+  <div><div class="v">1,380</div><i style="height:91px"></i><div class="l">Thu</div></div>
+  <div><div class="v">1,620</div><i style="height:107px"></i><div class="l">Fri</div></div>
+  <div><div class="v">1,480</div><i style="height:98px"></i><div class="l">Sat</div></div>
+  <div><div class="v">862</div><i style="height:57px"></i><div class="l">Sun</div></div>
+</div>
+<h2>Best sellers</h2>
+<table>
+  <tr><th class="up">Product</th><th class="up r">Units</th><th class="up r">Revenue</th></tr>
+  <tr><td>Organic cotton tee <span class="tag">· size M</span></td><td class="r num">46</td><td class="r num">€915.40</td></tr>
+  <tr><td>Hooded sweatshirt <span class="tag">· black</span></td><td class="r num">28</td><td class="r num">€1,257.20</td></tr>
+  <tr><td>Slim chino trousers</td><td class="r num">19</td><td class="r num">€855.00</td></tr>
+  <tr><td style="border:0">Classic denim jacket</td><td class="r num" style="border:0">11</td><td class="r num" style="border:0">€603.90</td></tr>
+</table>
+<h2>Stock to reorder</h2>
+<table>
+  <tr><th class="up">Product</th><th class="up r">Left</th><th class="up r">Runs out in</th></tr>
+  <tr><td>Waterproof city backpack</td><td class="r num">3</td><td class="r num">4 days</td></tr>
+  <tr><td>Organic cotton tee · S</td><td class="r num">6</td><td class="r num">6 days</td></tr>
+  <tr><td style="border:0">Beige canvas cap</td><td class="r num" style="border:0">8</td><td class="r num" style="border:0">9 days</td></tr>
+</table>
+<div class="foot"><span>Denoro Automations · automatic report</span><span class="num">Shopify data · 15-09-2026</span></div>

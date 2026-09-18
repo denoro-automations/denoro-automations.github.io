@@ -1,0 +1,47 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+body{width:800px}
+.top{display:flex;align-items:center;gap:12px;padding:16px 28px;border-bottom:1px solid var(--rule)}
+.top b{color:var(--ink);font-size:15px;font-weight:600}
+.top .sub{color:var(--faint);font-size:13px}
+.body{padding:28px}
+h1{font-size:22px;font-weight:400;color:var(--ink)}
+.p{color:var(--muted);font-size:13.5px;margin-top:6px;max-width:62ch}
+.form{display:flex;gap:10px;margin:22px 0 6px}
+.input{flex:1;height:40px;border:1px solid #cfcabd;border-radius:6px;display:flex;align-items:center;padding:0 13px;color:var(--ink);font-size:13.5px}
+.btn{height:40px}
+.hint{color:var(--faint);font-size:12px}
+.res{margin-top:26px;border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.res-h{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--sunk)}
+.res-h b{color:var(--ink);font-size:13.5px;font-weight:600}
+.tick{width:16px;height:16px;border-radius:50%;background:var(--accent);position:relative;flex:none}
+.tick::after{content:"";position:absolute;left:5.5px;top:3px;width:4px;height:8px;border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
+.res table{padding:0 18px}
+.res .in{padding:4px 18px 16px}
+td{font-size:13.5px}
+td.r{text-align:right;color:var(--ink)}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted)}
+</style>
+<div class="top"><span class="mark">D</span><b>Denoro</b><span class="sub">Add a link</span></div>
+<div class="body">
+  <h1 class="serif">Check before you save</h1>
+  <p class="p">Paste a competitor's whole store or a single product page. It works out what it is and shows you what it read.</p>
+  <div class="form">
+    <div class="input num">https://competitor-store.example/collections/men</div>
+    <span class="btn p">Check</span>
+  </div>
+  <p class="hint">One link at a time. If the store blocks automated requests, you are told right here.</p>
+  <div class="res">
+    <div class="res-h"><span class="tick"></span><b>Shopify store detected</b><span class="chip g num">1,426 products</span>
+      <span class="up" style="margin-left:auto">full catalogue</span></div>
+    <div class="in"><table>
+      <tr><th class="up">First products read</th><th class="up" style="text-align:right">Price</th><th class="up" style="text-align:right">Stock</th></tr>
+      <tr><td>Unisex hooded sweatshirt</td><td class="r num">€39.95</td><td class="r"><span class="chip o">yes</span></td></tr>
+      <tr><td>Organic cotton tee</td><td class="r num">€16.90</td><td class="r"><span class="chip o">yes</span></td></tr>
+      <tr><td>Slim chino trousers</td><td class="r num">€39.00</td><td class="r"><span class="chip o">yes</span></td></tr>
+      <tr><td>Waterproof city backpack</td><td class="r num">€62.00</td><td class="r"><span class="chip n">no</span></td></tr>
+      <tr><td style="border:0">Classic denim jacket</td><td class="r num" style="border:0">€54.90</td><td class="r" style="border:0"><span class="chip o">yes</span></td></tr>
+    </table></div>
+    <div class="foot"><span>The whole catalogue is saved and compared on every check.</span><span class="btn p">Save link</span></div>
+  </div>
+</div>

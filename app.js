@@ -146,6 +146,15 @@
       : (lang === 'en' ? 'Competitor price monitoring for online stores · Denoro Automations'
                        : 'Monitor de precios de la competencia para tiendas online · Denoro Automations');
     $$('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    // las capturas del producto también cambian de idioma
+    $$('[data-shot]').forEach((el) => {
+      const base = el.dataset.shot;
+      const file = `assets/${base}${lang === 'en' ? '-en' : ''}.webp`;
+      if (el.tagName === 'SOURCE') { el.srcset = file; return; }
+      if (lang === 'en') { if (!el.dataset.altEs) el.dataset.altEs = el.alt; el.alt = el.dataset.altEn || el.alt; }
+      else if (el.dataset.altEs) { el.alt = el.dataset.altEs; }
+      el.src = file;
+    });
     const tg = $('#tgMsg'); if (tg) tg.innerHTML = TG[lang];
     const q = $('#quote'); if (q) q.dataset.lang = lang;
     try { localStorage.setItem('denoro_lang', lang); } catch (e) { /* sin almacenamiento: da igual */ }
