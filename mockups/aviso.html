@@ -1,0 +1,46 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+body{width:640px}
+.mail{padding:18px 22px;border-bottom:1px solid var(--rule);display:flex;gap:11px;align-items:center}
+.mail .who b{display:block;color:var(--ink);font-size:13.5px;font-weight:600}
+.mail .who span{color:var(--faint);font-size:12px}
+.mail .when{margin-left:auto;color:var(--faint);font-size:12px}
+.body{padding:24px 26px 28px}
+h1{font-size:20px;font-weight:400;color:var(--ink);line-height:1.25}
+.sub{color:var(--muted);font-size:13px;margin-top:6px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:20px 0 6px}
+.kpi div{padding:14px 0}
+.kpi div+div{border-left:1px solid var(--rule-soft);padding-left:16px}
+.kpi b{display:block;font-size:22px;font-weight:400;color:var(--ink);line-height:1.2}
+h2{font-size:12.5px;font-weight:600;color:var(--ink);margin:24px 0 2px;display:flex;align-items:center;gap:8px}
+h2 em{font-style:normal;color:var(--faint);font-weight:400}
+.item{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule-soft);font-size:13px}
+.item .l{color:var(--ink)}
+.item .l span{display:block;color:var(--faint);font-size:11.5px;margin-top:2px}
+.item .v{text-align:right;white-space:nowrap;color:var(--ink)}
+.item .v em{font-style:normal;color:var(--faint)}
+.foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--rule);color:var(--faint);font-size:11.5px;display:flex;justify-content:space-between}
+</style>
+<div class="mail"><span class="mark">D</span><span class="who"><b>Denoro · Moda Sol</b><span>para hola@modasol.example</span></span><span class="when num">hoy, 8:00</span></div>
+<div class="body">
+  <h1 class="serif">3 cambios en tu competencia esta mañana</h1>
+  <p class="sub">1.426 productos revisados en 4 enlaces. Adjunto el CSV con todos los precios.</p>
+  <div class="kpi num">
+    <div><b class="serif">1</b><span class="up">te ganan</span></div>
+    <div><b class="serif">2</b><span class="up">bajadas</span></div>
+    <div><b class="serif">1</b><span class="up">sin stock</span></div>
+    <div><b class="serif">0</b><span class="up">errores</span></div>
+  </div>
+  <h2>Te están ganando en precio <em>1</em></h2>
+  <div class="item"><span class="l">Sudadera con capucha<span>ropa-rival.example</span></span>
+    <span class="v num">39,95 € <em>· tú 44,90 €</em><br><span class="chip a">−11,0 %</span></span></div>
+  <h2>Bajadas de precio <em>2</em></h2>
+  <div class="item"><span class="l">Camiseta algodón orgánico<span>basics.example</span></span>
+    <span class="v num"><em>19,90 € →</em> 16,90 €<br><span class="chip o">−15,1 %</span></span></div>
+  <div class="item"><span class="l">Pantalón chino slim<span>tienda-competidor.example</span></span>
+    <span class="v num"><em>45,00 € →</em> 39,00 €<br><span class="chip o">−13,3 %</span></span></div>
+  <h2>Se han quedado sin stock <em>1</em></h2>
+  <div class="item" style="border:0"><span class="l">Mochila urbana impermeable<span>basics.example</span></span>
+    <span class="v num">62,00 €<br><span class="chip n">agotado</span></span></div>
+  <div class="foot"><span>Denoro Automations · monitor de precios</span><span>precios-18-09.csv</span></div>
+</div>

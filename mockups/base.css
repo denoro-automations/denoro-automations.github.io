@@ -1,0 +1,26 @@
+:root{
+  --ink:#191713; --text:#35322c; --muted:#6e6a61; --faint:#7b7669;
+  --rule:#e7e4dc; --rule-soft:#f0ede6; --paper:#fff; --sunk:#f7f6f3;
+  --accent:#235b54; --accent-tint:#e9f0ee;
+  --alert:#8f2f24; --alert-tint:#f9edea; --ok:#2c5f3c; --ok-tint:#eaf1ec;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--text);
+  font-family:"TeX Gyre Heros",Carlito,"DejaVu Sans",sans-serif;
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+.serif{font-family:"TeX Gyre Pagella","Bitstream Charter",Georgia,serif}
+.up{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.chip{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11.5px;line-height:1.4;white-space:nowrap}
+.chip.n{background:var(--sunk);color:var(--muted)}
+.chip.a{background:var(--alert-tint);color:var(--alert)}
+.chip.o{background:var(--ok-tint);color:var(--ok)}
+.chip.g{background:var(--accent-tint);color:var(--accent)}
+.mark{width:26px;height:26px;border-radius:6px;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-family:"TeX Gyre Pagella",Georgia,serif;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 16px;
+  border-radius:6px;border:1px solid #cfcabd;background:#fff;color:var(--ink);font-size:13.5px}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-weight:400;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+td{padding:14px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}

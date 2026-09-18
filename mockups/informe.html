@@ -1,0 +1,60 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+body{width:620px;padding:40px 44px}
+.head{display:flex;align-items:flex-start;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.head .t{flex:1}
+h1{font-size:24px;font-weight:400;color:var(--ink);line-height:1.2}
+.head .sub{color:var(--muted);font-size:12.5px;margin-top:5px}
+.head .mark{margin-top:3px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.kpi div{padding:18px 0}
+.kpi div+div{border-left:1px solid var(--rule-soft);padding-left:16px}
+.kpi b{display:block;font-size:24px;font-weight:400;color:var(--ink);line-height:1.15}
+.kpi .d{font-size:11.5px;margin-top:4px;white-space:nowrap}
+.up2{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block;margin-top:4px}
+h2{font-size:12.5px;font-weight:600;color:var(--ink);margin:26px 0 12px}
+.chart{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;align-items:end;margin-bottom:8px}
+.chart div{text-align:center}
+.chart i{display:block;background:var(--accent);border-radius:3px 3px 0 0;opacity:.85}
+.chart .l{font-size:10.5px;color:var(--faint);margin-top:8px;padding-bottom:2px}
+.chart .v{font-size:10.5px;color:var(--muted);margin-bottom:5px}
+td,th{font-size:12.5px}
+td.r,th.r{text-align:right}
+td{padding:10px 0}
+.tag{color:var(--muted)}
+.foot{margin-top:30px;padding-top:12px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;color:var(--faint);font-size:11px}
+</style>
+<div class="head"><span class="mark">D</span><div class="t"><h1 class="serif">Informe semanal · Moda Sol</h1>
+  <p class="sub num">Del 8 al 14 de septiembre de 2026 · generado el lunes a las 7:00</p></div></div>
+<div class="kpi num">
+  <div><b class="serif">8.412 €</b><span class="up2">ventas</span><span class="d" style="color:var(--ok)">+12,4 % vs anterior</span></div>
+  <div><b class="serif">132</b><span class="up2">pedidos</span><span class="d" style="color:var(--ok)">+9 pedidos</span></div>
+  <div><b class="serif">63,73 €</b><span class="up2">ticket medio</span><span class="d" style="color:var(--muted)">+1,80 €</span></div>
+  <div><b class="serif">2,1 %</b><span class="up2">devoluciones</span><span class="d" style="color:var(--muted)">3 pedidos</span></div>
+</div>
+<h2>Ventas por día</h2>
+<div class="chart num">
+  <div><div class="v">940</div><i style="height:62px"></i><div class="l">lun</div></div>
+  <div><div class="v">1.120</div><i style="height:74px"></i><div class="l">mar</div></div>
+  <div><div class="v">1.010</div><i style="height:67px"></i><div class="l">mié</div></div>
+  <div><div class="v">1.380</div><i style="height:91px"></i><div class="l">jue</div></div>
+  <div><div class="v">1.620</div><i style="height:107px"></i><div class="l">vie</div></div>
+  <div><div class="v">1.480</div><i style="height:98px"></i><div class="l">sáb</div></div>
+  <div><div class="v">862</div><i style="height:57px"></i><div class="l">dom</div></div>
+</div>
+<h2>Productos más vendidos</h2>
+<table>
+  <tr><th class="up">Producto</th><th class="up r">Unidades</th><th class="up r">Ingresos</th></tr>
+  <tr><td>Camiseta algodón orgánico <span class="tag">· talla M</span></td><td class="r num">46</td><td class="r num">915,40 €</td></tr>
+  <tr><td>Sudadera con capucha <span class="tag">· negro</span></td><td class="r num">28</td><td class="r num">1.257,20 €</td></tr>
+  <tr><td>Pantalón chino slim</td><td class="r num">19</td><td class="r num">855,00 €</td></tr>
+  <tr><td style="border:0">Chaqueta vaquera clásica</td><td class="r num" style="border:0">11</td><td class="r num" style="border:0">603,90 €</td></tr>
+</table>
+<h2>Stock a reponer</h2>
+<table>
+  <tr><th class="up">Producto</th><th class="up r">Quedan</th><th class="up r">Se agota en</th></tr>
+  <tr><td>Mochila urbana impermeable</td><td class="r num">3</td><td class="r num">4 días</td></tr>
+  <tr><td>Camiseta algodón orgánico · S</td><td class="r num">6</td><td class="r num">6 días</td></tr>
+  <tr><td style="border:0">Gorra lona beige</td><td class="r num" style="border:0">8</td><td class="r num" style="border:0">9 días</td></tr>
+</table>
+<div class="foot"><span>Denoro Automations · informe automático</span><span class="num">Datos de Shopify · 15-09-2026</span></div>
