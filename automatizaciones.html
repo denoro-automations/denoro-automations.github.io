@@ -1,25 +1,48 @@
-/* ============================================================
-   Denoro Automations · sistema visual
-   Papel cálido, tinta, un único acento (verde pizarra).
-   Filete de 1 px en lugar de sombras. Instrument Serif + IBM Plex Sans.
-   ============================================================ */
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automatizaciones para tiendas online · Denoro Automations</title>
+<meta name="description" content="Siete automatizaciones listas para tu tienda: fichas de producto con IA, stock del proveedor, carritos abandonados, vigilancia de reseñas, facturas, monitor de precios e informe semanal. Desde 149 €.">
+<link rel="canonical" href="https://denoro-automations.github.io/automatizaciones.html">
+<link rel="alternate" hreflang="es" href="https://denoro-automations.github.io/automatizaciones.html">
+<link rel="alternate" hreflang="en" href="https://denoro-automations.github.io/automatizaciones.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://denoro-automations.github.io/automatizaciones.html">
+<meta name="theme-color" content="#fcfcfa">
+
+<meta name="author" content="Denoro Automations">
+<meta property="og:site_name" content="Denoro Automations">
+<meta property="og:title" content="Siete automatizaciones para tiendas online">
+<meta property="og:description" content="Fichas de producto, stock del proveedor, carritos abandonados, reseñas, facturas, precios de la competencia e informe semanal.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:url" content="https://denoro-automations.github.io/automatizaciones.html">
+<meta property="og:image" content="https://denoro-automations.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Panel de Denoro Automations">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Siete automatizaciones para tiendas online">
+<meta name="twitter:description" content="Fichas de producto, stock del proveedor, carritos abandonados, reseñas, facturas, precios e informe semanal.">
+<meta name="twitter:image" content="https://denoro-automations.github.io/assets/og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
 :root{
-  /* papel y tinta */
   --paper:#fcfcfa; --surface:#fff; --sunk:#f4f3ef;
   --ink:#191713; --text:#35322c; --muted:#6e6a61; --faint:#767166;
   --rule:#e7e4dc; --rule-strong:#d8d4c9; --rule-field:#8f8a7e;
-  /* acento único */
   --accent:#235b54; --accent-ink:#fff; --accent-tint:#e8efec; --accent-deep:#1a4640;
-  /* estados de formulario (no decorativos) */
   --alert:#8f2f24; --alert-tint:#f8eae7; --ok:#2c5f3c; --ok-tint:#e9f0ea;
-  /* radios: contenedores más suaves que los elementos internos */
   --r-xs:4px; --r-s:6px; --r-m:10px; --r-l:14px;
-  /* espaciado 4·8·12·16·24·32·48·72·112 */
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:72px; --s9:112px;
-  /* escala tipográfica */
   --t-display:clamp(38px,5.4vw,62px); --t-h2:clamp(28px,3.6vw,38px); --t-h3:22px;
   --t-lead:19px; --t-body:17px; --t-sm:15px; --t-xs:13px;
-  /* movimiento */
   --e-out:cubic-bezier(.2,.7,.3,1); --d-fast:120ms; --d-base:180ms; --d-enter:320ms;
   --z-header:20; --z-cta:25; --z-cookies:30;
 }
@@ -39,8 +62,6 @@ main{display:block}
 section{padding-block:var(--s9) var(--s8)}
 section+section{border-top:1px solid var(--rule)}
 @media (max-width:720px){section{padding-block:var(--s8) var(--s7)}}
-
-/* --- tipografía --- */
 h1,h2,h3{color:var(--ink);margin:0;text-wrap:balance}
 h1,h2{font-family:"Instrument Serif","Iowan Old Style",Georgia,serif;font-weight:400;letter-spacing:-.02em}
 h1{font-size:var(--t-display);line-height:1.04;max-width:15ch}
@@ -54,8 +75,6 @@ p{margin:0;text-wrap:pretty}
 .hint{color:var(--muted);font-size:var(--t-xs);line-height:1.5}
 .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1,"lnum" 1}
 .stack>*+*{margin-top:var(--s4)}
-
-/* --- cabecera --- */
 body>header{position:sticky;top:0;z-index:var(--z-header);background:color-mix(in srgb,var(--paper) 88%,transparent);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 body>header .wrap{display:flex;align-items:center;gap:var(--s5);min-height:68px}
@@ -69,16 +88,12 @@ nav a:hover{color:var(--ink)}
 nav a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -1px 0 var(--accent)}
 @media (max-width:900px){nav .hide-m{display:none}}
 @media (max-width:620px){body>header .wrap{gap:var(--s3)}nav .btn{display:none}.brand span{display:none}}
-
-/* --- selector de idioma --- */
 .lang{display:inline-flex;border:1px solid var(--rule-field);border-radius:var(--r-s);overflow:hidden;background:var(--surface)}
 .lang button{border:0;background:transparent;color:var(--muted);cursor:pointer;
   font:500 13px/1 "IBM Plex Sans",sans-serif;letter-spacing:.04em;padding:0 13px;min-height:44px;
   transition:color var(--d-fast) var(--e-out),background var(--d-fast) var(--e-out)}
 .lang button:hover{color:var(--ink)}
 .lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
-
-/* --- botones --- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;
   border:1px solid var(--rule-field);border-radius:var(--r-s);background:var(--surface);color:var(--ink);
   font:500 16px/1 "IBM Plex Sans",sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;
@@ -94,8 +109,6 @@ nav a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -1px 0 var(--acce
 :where(a,button,input,select,textarea,summary,details):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--r-xs)}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:24px;top:12px;z-index:40;background:var(--surface);padding:12px 16px;border:1px solid var(--rule);border-radius:var(--r-s)}
-
-/* --- movimiento: entrada al hacer scroll --- */
 .reveal{opacity:0;transform:translateY(8px)}
 .reveal.in{opacity:1;transform:none;transition:opacity var(--d-enter) var(--e-out),transform var(--d-enter) var(--e-out);
   transition-delay:var(--delay,0ms)}
@@ -104,8 +117,6 @@ nav a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -1px 0 var(--acce
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
-
-/* --- portada --- */
 .hero{padding-block:var(--s8) var(--s9);border-top:0}
 .hero-grid{display:grid;gap:var(--s7);align-items:center}
 @media (min-width:1000px){
@@ -120,15 +131,12 @@ nav a[aria-current="true"]{color:var(--ink);box-shadow:inset 0 -1px 0 var(--acce
 .facts dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding-top:3px}
 .facts dd{margin:0;font-size:var(--t-sm);color:var(--text)}
 .facts .num{color:var(--ink);font-weight:600}
-/* marco de ventana para las capturas */
 .window{border:1px solid var(--rule);border-radius:var(--r-l);overflow:hidden;background:var(--surface)}
 .window-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--rule);background:var(--sunk)}
 .window-bar span{width:9px;height:9px;border-radius:50%;background:var(--rule-strong)}
 .window-bar b{margin-left:8px;font:400 12px/1 "IBM Plex Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 figure{margin:0}
 figcaption{color:var(--faint);font-size:var(--t-xs);margin-top:var(--s3);max-width:52ch}
-
-/* --- pasos --- */
 .steps{list-style:none;margin:var(--s7) 0 0;padding:0;border-top:1px solid var(--rule)}
 .steps li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--s5);
   padding-block:var(--s6);border-bottom:1px solid var(--rule);align-items:start}
@@ -139,16 +147,12 @@ figcaption{color:var(--faint);font-size:var(--t-xs);margin-top:var(--s3);max-wid
 .step-n{font-family:"Instrument Serif",Georgia,serif;font-size:34px;line-height:1;color:var(--accent)}
 .steps p{color:var(--muted);max-width:52ch}
 @media (max-width:859px){.steps h3{margin-bottom:var(--s2)}}
-
-/* --- qué te avisa --- */
 .detects{margin-top:var(--s7);display:grid;gap:var(--s4)}
 @media (min-width:860px){.detects{grid-template-columns:96px minmax(0,1fr);gap:var(--s6);align-items:baseline}}
 .detects-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:var(--s2);margin:0;padding:0}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:7px 14px;font-size:var(--t-sm);
   color:var(--ink);background:var(--surface)}
-
-/* --- demos --- */
 .demo{display:grid;gap:var(--s6);margin-top:var(--s7);align-items:center}
 @media (min-width:920px){
   .demo{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--s7)}
@@ -161,7 +165,6 @@ figcaption{color:var(--faint);font-size:var(--t-xs);margin-top:var(--s3);max-wid
   border-bottom:1px solid currentColor;padding-bottom:2px}
 .link-arrow::after{content:"→";transition:transform var(--d-base) var(--e-out)}
 .link-arrow:hover::after{transform:translateX(3px)}
-/* mensaje de Telegram (maqueta) */
 .tg{border:1px solid var(--rule);border-radius:var(--r-l);background:var(--surface);padding:var(--s4);max-width:420px}
 .tg-head{display:flex;align-items:center;gap:10px;padding-bottom:var(--s3);border-bottom:1px solid var(--rule);margin-bottom:var(--s3)}
 .tg-head i{width:34px;height:34px;border-radius:var(--r-s);background:var(--accent);color:#fff;
@@ -171,8 +174,6 @@ figcaption{color:var(--faint);font-size:var(--t-xs);margin-top:var(--s3);max-wid
 .tg-msg{background:var(--sunk);border-radius:var(--r-s);padding:var(--s3) var(--s4);font-size:14.5px;
   line-height:1.6;color:var(--text);white-space:pre-wrap}
 .tg-msg b{color:var(--ink);font-weight:600}
-
-/* --- precios --- */
 .plans{display:grid;gap:var(--s5);margin-top:var(--s7);align-items:stretch}
 @media (min-width:880px){.plans{grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--rule);border-radius:var(--r-l);overflow:hidden}
   .plan+.plan{border-left:1px solid var(--rule)}
@@ -194,8 +195,6 @@ figcaption{color:var(--faint);font-size:var(--t-xs);margin-top:var(--s3);max-wid
 .plan.featured li::before{background:var(--accent);opacity:1}
 .plan .btn{margin-top:var(--s2)}
 .note{margin-top:var(--s5);color:var(--muted);font-size:var(--t-sm);max-width:70ch}
-
-/* --- preguntas --- */
 .faq{margin-top:var(--s7);border-top:1px solid var(--rule)}
 details{border-bottom:1px solid var(--rule);padding-block:var(--s4)}
 summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s4);
@@ -207,8 +206,6 @@ details[open] summary::after{content:"−";transform:rotate(180deg)}
 details p{margin-top:var(--s3);color:var(--muted);max-width:72ch;font-size:var(--t-sm)}
 details[open] p{animation:faq-in var(--d-enter) var(--e-out) both}
 @keyframes faq-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-
-/* --- formulario --- */
 .form-grid{display:grid;gap:var(--s7);align-items:start}
 @media (min-width:920px){.form-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:var(--s8)}}
 .form-intro .lead{margin-top:var(--s4)}
@@ -238,14 +235,10 @@ textarea{min-height:104px;resize:vertical;line-height:1.55}
   padding-block:var(--s3);border-bottom:1px solid var(--rule);align-items:baseline}
 .checklist b{color:var(--ink);font-weight:600}
 @media (max-width:520px){.checklist li{grid-template-columns:1fr;gap:2px}}
-
-/* --- pie --- */
 footer{padding-block:var(--s7);border-top:1px solid var(--rule);color:var(--muted);font-size:var(--t-xs)}
 footer .wrap{display:flex;gap:var(--s5);flex-wrap:wrap;align-items:center;justify-content:space-between}
 footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
 footer a:hover{color:var(--ink);border-color:var(--ink)}
-
-/* --- barra de contacto en móvil --- */
 .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-cta);
   background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);
   border-top:1px solid var(--rule);padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
@@ -254,8 +247,6 @@ footer a:hover{color:var(--ink);border-color:var(--ink)}
 .mobile-cta .btn{width:100%}
 @media (min-width:901px){.mobile-cta{display:none!important}}
 body.has-mobile-cta footer{padding-bottom:96px}
-
-/* --- aviso de cookies --- */
 .cookies{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-cookies);background:var(--surface);
   border-top:1px solid var(--rule);padding-block:var(--s4);padding-bottom:calc(var(--s4) + env(safe-area-inset-bottom,0px));
   animation:cookies-in var(--d-enter) var(--e-out) both}
@@ -269,8 +260,6 @@ body.has-mobile-cta footer{padding-bottom:96px}
   .cookie-actions{width:100%}
   .cookie-actions .btn{flex:1 1 auto;padding-inline:12px}
 }
-
-/* --- páginas legales --- */
 .legal{padding-block:var(--s7) var(--s9);max-width:760px}
 .legal h1{max-width:22ch;font-size:clamp(32px,4.4vw,46px);margin-bottom:var(--s3)}
 .legal section{margin-top:var(--s7);border-top:0;padding:0}
@@ -278,15 +267,9 @@ body.has-mobile-cta footer{padding-bottom:96px}
 .legal h3{margin-top:var(--s5);font-size:17px}
 .legal p{margin-top:var(--s3);max-width:68ch}
 .legal .checklist{border-top:0;padding-top:0}
-
-/* en móvil, la captura del panel es la versión de móvil: se lee */
 @media (max-width:640px){.hero-shot .window img{max-height:460px;object-fit:cover;object-position:top}}
-
-/* captura del email dentro del bloque de avisos */
 .mail-shot{margin-top:var(--s5);max-width:340px}
 .mail-shot .window img{max-height:260px;object-fit:cover;object-position:top}
-
-/* --- catálogo de automatizaciones --- */
 .cat-hero{padding-block:var(--s8) var(--s7)}
 .cat-hero h1{max-width:18ch}
 .cat-hero .lead{margin-top:var(--s4)}
@@ -314,6 +297,194 @@ body.has-mobile-cta footer{padding-bottom:96px}
 .auto-cta .cta-row{margin-top:var(--s5)}
 @media (min-width:1000px){.auto-cta{grid-column:span 2}}
 @media (max-width:520px){.autos{grid-template-columns:1fr}.auto-cta{padding:var(--s5)}}
-
-/* con el enlace al catálogo, entre 860 y 1100 px no caben todos los apartados */
 @media (max-width:1100px){header nav a[href="#faq"]{display:none}}
+</style>
+</head>
+<body class="catalogo-page">
+<a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./"><i aria-hidden="true">D</i>Denoro <span class="mono" style="color:var(--muted);font-weight:400;font-size:14px">Automations</span></a>
+    <nav>
+      <a class="hide-m" href="./#como" data-i18n="nav1">Cómo funciona</a>
+      <a class="hide-m" href="./#demos" data-i18n="nav2">Demos</a>
+      <a class="hide-m" href="./#precios" data-i18n="nav3">Precios</a>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn primary" href="./#presupuesto" data-i18n="navcta">Pedir presupuesto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="cat-hero"><div class="wrap">
+  <p class="eyebrow reveal" data-i18n="auEyebrow">Catálogo · e-commerce</p>
+  <h1 class="reveal" data-i18n="auTitle">Siete automatizaciones que ya están escritas</h1>
+  <p class="lead reveal" data-i18n="auLead">No empiezo de cero contigo. Cada una de estas corre hoy, tiene su modo de prueba para que la veas funcionando antes de contratar nada, y su código está publicado para que lo mire quien quieras.</p>
+  <dl class="facts reveal">
+    <div><dt data-i18n="auF1t">Montadas sobre</dt><dd data-i18n="auF1">n8n, en tu servidor o en el mío</dd></div>
+    <div><dt data-i18n="auF2t">Tiendas</dt><dd data-i18n="auF2">Shopify, WooCommerce, CSV o XML del proveedor</dd></div>
+    <div><dt data-i18n="auF3t">Desde</dt><dd><span class="num" data-i18n="auF3n">149 €</span> <span data-i18n="auF3">con el alcance cerrado por escrito</span></dd></div>
+  </dl>
+</div></section>
+
+<section class="cat-list"><div class="wrap">
+  <div class="autos">
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a1k">Contenido</p>
+      <h2 data-i18n="a1t">Fichas de producto con IA</h2>
+      <p data-i18n="a1p">Le das el catálogo y devuelve títulos SEO, meta descripciones y fichas en HTML listas para importar. Sin inventarse nada: cualquier dato que no esté en el producto se marca para que lo revises.</p>
+      <ul class="checklist">
+        <li data-i18n="a1l1"><b>Entra</b> un CSV, tu Shopify o tu WooCommerce</li>
+        <li data-i18n="a1l2"><b>Sale</b> un CSV que se importa tal cual en la tienda</li>
+        <li data-i18n="a1l3"><b>Con IA o sin ella</b> el motor de plantilla no cuesta nada</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a1c">A mano o los lunes</dd></div>
+        <div><dt data-i18n="mAhorro">Sustituye</dt><dd data-i18n="a1a">10–20 min por producto</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/ecommerce-automations/tree/main/fichas-producto" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a2k">Inventario</p>
+      <h2 data-i18n="a2t">Stock del proveedor</h2>
+      <p data-i18n="a2p">Lee el feed de tu proveedor y ajusta las existencias de la tienda cada pocas horas. Lo importante no es que sincronice: es que <strong>se bloquea sola</strong> si el feed llega roto, antes de vaciarte el catálogo.</p>
+      <ul class="checklist">
+        <li data-i18n="a2l1"><b>Formatos</b> CSV o XML, en formato español o inglés</li>
+        <li data-i18n="a2l2"><b>Frenos</b> por número de cambios y de agotados</li>
+        <li data-i18n="a2l3"><b>Modo prueba</b> te enseña qué haría sin tocar nada</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a2c">4 horas</dd></div>
+        <div><dt data-i18n="mEvita">Evita</dt><dd data-i18n="a2a">Vender lo que no tienes</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/ecommerce-automations/tree/main/stock-proveedor" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a3k">Ventas</p>
+      <h2 data-i18n="a3t">Carritos abandonados</h2>
+      <p data-i18n="a3p">Una secuencia de avisos al comprador que se quedó a medias, con el carrito y un descuento si toca. Y, sobre todo, la cuenta de cuántos volvieron y por cuánto dinero.</p>
+      <ul class="checklist">
+        <li data-i18n="a3l1"><b>Secuencia</b> los pasos y los textos los decides tú</li>
+        <li data-i18n="a3l2"><b>Consentimiento</b> solo escribe a quien lo aceptó</li>
+        <li data-i18n="a3l3"><b>Marca</b> el email lo firma tu tienda, no Denoro</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a3c">30 minutos</dd></div>
+        <div><dt data-i18n="mMide">Mide</dt><dd data-i18n="a3a">Euros recuperados</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/ecommerce-automations/tree/main/carritos" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a4k">Reputación</p>
+      <h2 data-i18n="a4t">Vigilancia de reseñas</h2>
+      <p data-i18n="a4p">Te avisa el mismo día de cada reseña negativa, que es cuando contestar todavía sirve de algo. Los lunes, un resumen con la nota media, la tendencia y de qué se queja la gente.</p>
+      <ul class="checklist">
+        <li data-i18n="a4l1"><b>Fuentes</b> las páginas de reseñas que tú elijas</li>
+        <li data-i18n="a4l2"><b>Temas</b> agrupa las quejas, no cuenta palabras sueltas</li>
+        <li data-i18n="a4l3"><b>Sin ruido</b> no repite avisos de reseñas ya vistas</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a4c">2 horas · resumen los lunes</dd></div>
+        <div><dt data-i18n="mEvita">Evita</dt><dd data-i18n="a4a">Reseñas de 1★ sin contestar</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/ecommerce-automations/tree/main/resenas" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a5k">Administración</p>
+      <h2 data-i18n="a5t">Facturas y albaranes</h2>
+      <p data-i18n="a5p">Numera, calcula el IVA por tipos, genera el PDF con tu marca y se lo manda al cliente. Un pedido ya facturado no se vuelve a numerar nunca, que es donde suelen empezar los líos.</p>
+      <ul class="checklist">
+        <li data-i18n="a5l1"><b>Numeración</b> serie correlativa y desglose de IVA correctos</li>
+        <li data-i18n="a5l2"><b>Albarán</b> en el mismo PDF si lo necesitas</li>
+        <li data-i18n="a5l3"><b>Libro</b> las facturas en CSV para la asesoría</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a5c">1 hora</dd></div>
+        <div><dt data-i18n="mAhorro">Sustituye</dt><dd data-i18n="a5a">2–5 min por pedido</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/ecommerce-automations/tree/main/facturas" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a6k">Competencia</p>
+      <h2 data-i18n="a6t">Monitor de precios y stock</h2>
+      <p data-i18n="a6p">Vigila los precios y el stock de las tiendas que le digas y te manda un único resumen cuando cambia algo que te afecta. Con su panel de cliente para pegar los enlaces.</p>
+      <ul class="checklist">
+        <li data-i18n="a6l1"><b>Catálogo entero</b> en Shopify y WooCommerce</li>
+        <li data-i18n="a6l2"><b>Tu precio</b> aviso cuando alguien baja de él</li>
+        <li data-i18n="a6l3"><b>Histórico</b> diario y en CSV</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a6c">1 a 24 horas, tú eliges</dd></div>
+        <div><dt data-i18n="mMide">Mide</dt><dd data-i18n="a6a">Cambios de precio y stock</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/price-monitor" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto reveal">
+      <p class="eyebrow" data-i18n="a7k">Dirección</p>
+      <h2 data-i18n="a7t">Informe semanal de tu tienda</h2>
+      <p data-i18n="a7p">Los lunes a las ocho, un PDF con las ventas de la semana, los productos que más se mueven y lo que se te va a agotar. Por email y por Telegram.</p>
+      <ul class="checklist">
+        <li data-i18n="a7l1"><b>Cifras</b> ventas, pedidos y ticket medio, con comparación</li>
+        <li data-i18n="a7l2"><b>Stock</b> aviso de lo que no llega a la semana que viene</li>
+        <li data-i18n="a7l3"><b>PDF</b> listo para reenviar a quien sea</li>
+      </ul>
+      <dl class="auto-meta">
+        <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a7c">Lunes a las 8:00</dd></div>
+        <div><dt data-i18n="mMide">Mide</dt><dd data-i18n="a7a">Ventas y rotación</dd></div>
+      </dl>
+      <a class="link-arrow" href="https://github.com/denoro-automations/weekly-report" target="_blank" rel="noopener"><span data-i18n="auCode">Ver el código</span></a>
+    </article>
+
+    <article class="auto auto-cta reveal">
+      <h2 data-i18n="auCtaT">¿Tu caso no está en la lista?</h2>
+      <p data-i18n="auCtaP">Casi todo lo que se repite cada semana en una tienda se puede automatizar. Cuéntame qué haces a mano y te digo si merece la pena, cuánto costaría y en cuánto tiempo estaría — antes de empezar nada.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="./#presupuesto" data-i18n="auCta1">Pedir presupuesto</a>
+        <a class="btn" href="./#precios" data-i18n="auCta2">Ver precios</a>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="year"></span> Denoro Automations · <span data-i18n="footNote">Automatización e-commerce · España</span></span>
+  <span><a href="legal.html#aviso" data-i18n="footLegal">Aviso legal</a> · <a href="legal.html#privacidad" data-i18n="footPriv">Privacidad</a> · <a href="mailto:manelfernandezp1@gmail.com">manelfernandezp1@gmail.com</a> · <a href="https://github.com/denoro-automations" target="_blank" rel="noopener">GitHub</a></span>
+</div></footer>
+
+<div class="cookies" id="cookieBar" hidden role="region" aria-label="Aviso de cookies">
+  <div class="wrap cookie-inner">
+    <p data-i18n="cookieText">Esta web no usa cookies de publicidad ni de seguimiento. Solo guarda en tu navegador el idioma que elijas y mide visitas de forma anónima, sin cookies.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn primary" id="cookieOk" data-i18n="cookieOk">De acuerdo</button>
+      <button type="button" class="btn ghost" id="cookieNo" data-i18n="cookieNo">Sin medición</button>
+      <a class="btn ghost" href="legal.html#privacidad" data-i18n="cookieMore">Más información</a>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Automatizaciones para tiendas online","itemListOrder":"https://schema.org/ItemListUnordered","numberOfItems":7,
+ "itemListElement":[
+  {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Fichas de producto con IA","description":"Genera títulos SEO, meta descripciones y fichas en HTML a partir del catálogo, listas para importar.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}},
+  {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Sincronización de stock del proveedor","description":"Ajusta las existencias de la tienda con el feed del proveedor, con frenos de seguridad si el feed llega mal.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}},
+  {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Recuperación de carritos abandonados","description":"Secuencia de avisos al comprador y medición de los carritos recuperados.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}},
+  {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Vigilancia de reseñas","description":"Aviso inmediato de reseñas negativas y resumen semanal de reputación.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}},
+  {"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Facturas y albaranes automáticos","description":"Numeración correlativa, desglose de IVA, PDF con la marca de la tienda y envío al cliente.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}},
+  {"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Monitor de precios y stock de la competencia","description":"Vigilancia de precios y stock de tiendas competidoras con avisos por Telegram y email.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}},
+  {"@type":"ListItem","position":7,"item":{"@type":"Service","name":"Informe semanal de la tienda","description":"Informe en PDF con ventas, productos destacados y avisos de stock, cada lunes.","provider":{"@id":"https://denoro-automations.github.io/#negocio"}}}]}
+</script>
+<script src="app.js" defer></script>
+</body>
+</html>

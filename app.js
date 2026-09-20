@@ -35,6 +35,59 @@
   };
 
   const EN = {
+    // --- catálogo de automatizaciones ---
+    navcat: 'Automations',
+    auEyebrow: 'Catalogue · e-commerce', auTitle: 'Seven automations that are already written',
+    auLead: 'I am not starting from scratch with you. Every one of these runs today, has a demo mode so you can watch it work before hiring anything, and its code is published for whoever you want to check it.',
+    auF1t: 'Built on', auF1: 'n8n, on your server or on mine',
+    auF2t: 'Shops', auF2: 'Shopify, WooCommerce, supplier CSV or XML',
+    auF3t: 'From', auF3n: '€149', auF3: 'with the scope agreed in writing',
+    mCada: 'Runs', mAhorro: 'Replaces', mEvita: 'Prevents', mMide: 'Measures', auCode: 'See the code',
+    a1k: 'Content', a1t: 'AI product descriptions',
+    a1p: 'You hand it the catalogue and it returns SEO titles, meta descriptions and HTML copy ready to import. Without making things up: any figure that is not in the product data is flagged for you to review.',
+    a1l1: '<b>In</b> a CSV, your Shopify or your WooCommerce',
+    a1l2: '<b>Out</b> a CSV you import straight into the shop',
+    a1l3: '<b>With or without AI</b> the template engine costs nothing',
+    a1c: 'On demand or Mondays', a1a: '10–20 min per product',
+    a2k: 'Inventory', a2t: 'Supplier stock sync',
+    a2p: 'Reads your supplier feed and adjusts shop stock every few hours. The point is not that it syncs: it is that it <strong>stops itself</strong> when the feed arrives broken, before it empties your catalogue.',
+    a2l1: '<b>Formats</b> CSV or XML, Spanish or English numbers',
+    a2l2: '<b>Brakes</b> on number of changes and of sold-out items',
+    a2l3: '<b>Dry run</b> shows what it would do without touching anything',
+    a2c: '4 hours', a2a: 'Selling what you do not have',
+    a3k: 'Sales', a3t: 'Abandoned carts',
+    a3p: 'A sequence of reminders to the shopper who stopped halfway, with their cart and a discount when it makes sense. And, above all, the count of how many came back and for how much.',
+    a3l1: '<b>Sequence</b> steps and wording are yours to set',
+    a3l2: '<b>Consent</b> it only writes to those who opted in',
+    a3l3: '<b>Branding</b> the email is signed by your shop, not Denoro',
+    a3c: '30 minutes', a3a: 'Euros recovered',
+    a4k: 'Reputation', a4t: 'Review monitoring',
+    a4p: 'Tells you the same day a negative review lands, which is while replying still changes anything. On Mondays, a digest with the average score, the trend and what people are complaining about.',
+    a4l1: '<b>Sources</b> the review pages you choose',
+    a4l2: '<b>Themes</b> groups complaints instead of counting words',
+    a4l3: '<b>No noise</b> never repeats an alert for a review already seen',
+    a4c: '2 hours · digest on Mondays', a4a: '1★ reviews left unanswered',
+    a5k: 'Admin', a5t: 'Invoices and delivery notes',
+    a5p: 'Numbers them, works out VAT by rate, builds the PDF with your branding and sends it to the customer. An order already invoiced is never renumbered, which is where the trouble usually starts.',
+    a5l1: '<b>Numbering</b> correct sequence and VAT breakdown',
+    a5l2: '<b>Delivery note</b> in the same PDF if you need it',
+    a5l3: '<b>Ledger</b> invoices in CSV for your accountant',
+    a5c: '1 hour', a5a: '2–5 min per order',
+    a6k: 'Competitors', a6t: 'Price and stock monitoring',
+    a6p: 'Watches the prices and stock of the shops you choose and sends one summary when something that affects you changes. With its own client panel to paste the links.',
+    a6l1: '<b>Whole catalogue</b> on Shopify and WooCommerce',
+    a6l2: '<b>Your price</b> alerts when someone goes below it',
+    a6l3: '<b>History</b> daily, in CSV',
+    a6c: '1 to 24 hours, your call', a6a: 'Price and stock changes',
+    a7k: 'Management', a7t: 'Weekly shop report',
+    a7p: 'Mondays at eight, a PDF with the week\'s sales, the products that move and what is about to run out. By email and Telegram.',
+    a7l1: '<b>Figures</b> sales, orders and average basket, compared',
+    a7l2: '<b>Stock</b> alert on what will not last the week',
+    a7l3: '<b>PDF</b> ready to forward to anyone',
+    a7c: 'Mondays at 8:00', a7a: 'Sales and stock rotation',
+    auCtaT: 'Your case is not on the list?',
+    auCtaP: 'Almost anything a shop repeats every week can be automated. Tell me what you do by hand and I will tell you whether it is worth it, what it would cost and how long it would take — before anything starts.',
+    auCta1: 'Get a quote', auCta2: 'See pricing',
     skip: 'Skip to content', nav1: 'How it works', nav2: 'Demos', nav3: 'Pricing', nav4: 'FAQ', navcta: 'Get a quote',
     heroEyebrow: 'Price monitoring · e-commerce',
     heroTitle: 'Know the moment a competitor drops a price. Without checking yourself.',
@@ -141,10 +194,14 @@
     $$('[data-i18n]').forEach((el) => { const v = dict[el.dataset.i18n]; if (v !== undefined) el.innerHTML = v; });
     document.documentElement.lang = lang;
     const legal = document.body.classList.contains('legal-page') || location.pathname.endsWith('legal.html');
+    const catalogo = document.body.classList.contains('catalogo-page');
     document.title = legal
       ? (lang === 'en' ? 'Legal notice and privacy · Denoro Automations' : 'Aviso legal y privacidad · Denoro Automations')
-      : (lang === 'en' ? 'Competitor price monitoring for online stores · Denoro Automations'
-                       : 'Monitor de precios de la competencia para tiendas online · Denoro Automations');
+      : (catalogo
+        ? (lang === 'en' ? 'Automations for online stores · Denoro Automations'
+                         : 'Automatizaciones para tiendas online · Denoro Automations')
+        : (lang === 'en' ? 'Competitor price monitoring for online stores · Denoro Automations'
+                         : 'Monitor de precios de la competencia para tiendas online · Denoro Automations'));
     $$('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
     // las capturas del producto también cambian de idioma
     $$('[data-shot]').forEach((el) => {

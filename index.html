@@ -272,6 +272,34 @@ body.has-mobile-cta footer{padding-bottom:96px}
 @media (max-width:640px){.hero-shot .window img{max-height:460px;object-fit:cover;object-position:top}}
 .mail-shot{margin-top:var(--s5);max-width:340px}
 .mail-shot .window img{max-height:260px;object-fit:cover;object-position:top}
+.cat-hero{padding-block:var(--s8) var(--s7)}
+.cat-hero h1{max-width:18ch}
+.cat-hero .lead{margin-top:var(--s4)}
+.cat-hero .facts{max-width:720px}
+.cat-list{padding-block:var(--s7) var(--s8)}
+.autos{display:grid;gap:var(--s5);grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.auto{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--rule);
+  border-radius:var(--r-l);padding:var(--s5)}
+.auto .eyebrow{margin-bottom:var(--s3)}
+.auto h2{font-size:var(--t-h3);font-family:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  font-weight:400;letter-spacing:-.01em;max-width:none;margin-bottom:var(--s3)}
+.auto>p{color:var(--text);font-size:var(--t-sm);line-height:1.6}
+.auto .checklist{margin-top:var(--s4);font-size:var(--t-xs)}
+.auto .checklist li{grid-template-columns:minmax(96px,auto) 1fr;gap:var(--s3)}
+.auto .checklist li b{color:var(--ink);font-weight:500}
+.auto-meta{display:grid;gap:0;margin:var(--s4) 0 var(--s5)}
+.auto-meta>div{display:grid;grid-template-columns:minmax(80px,auto) 1fr;gap:var(--s3);
+  padding-block:var(--s2);border-bottom:1px solid var(--rule)}
+.auto-meta dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding-top:3px}
+.auto-meta dd{margin:0;font-size:var(--t-sm);color:var(--text)}
+.auto .link-arrow{margin-top:auto;align-self:flex-start;font-size:var(--t-sm);color:var(--accent)}
+.auto-cta{background:var(--sunk);justify-content:center;padding:var(--s6)}
+.auto-cta h2{font-size:var(--t-h3);max-width:24ch}
+.auto-cta>p{color:var(--muted);font-size:var(--t-sm);margin-top:var(--s3)}
+.auto-cta .cta-row{margin-top:var(--s5)}
+@media (min-width:1000px){.auto-cta{grid-column:span 2}}
+@media (max-width:520px){.autos{grid-template-columns:1fr}.auto-cta{padding:var(--s5)}}
+@media (max-width:1100px){header nav a[href="#faq"]{display:none}}
 </style>
 </head>
 <body>
@@ -282,6 +310,7 @@ body.has-mobile-cta footer{padding-bottom:96px}
     <nav>
       <a class="hide-m" href="#como" data-i18n="nav1">Cómo funciona</a>
       <a class="hide-m" href="#demos" data-i18n="nav2">Demos</a>
+      <a class="hide-m" href="automatizaciones.html" data-i18n="navcat">Automatizaciones</a>
       <a class="hide-m" href="#precios" data-i18n="nav3">Precios</a>
       <a class="hide-m" href="#faq" data-i18n="nav4">Preguntas</a>
       <div class="lang" role="group" aria-label="Idioma / Language">

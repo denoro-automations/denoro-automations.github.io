@@ -26,6 +26,7 @@ def main():
     css = re.sub(r"\n\s*\n", "\n", css).strip()
     n1 = build_page("index.src.html", "index.html", css)
     n2 = build_page("legal.src.html", "legal.html", css)
+    n3 = build_page("automatizaciones.src.html", "automatizaciones.html", css)
     shutil.copy(SRC / "app.js", HERE / "app.js")
 
     hoy = date.today().isoformat()
@@ -36,6 +37,10 @@ def main():
         f'    <xhtml:link rel="alternate" hreflang="es" href="{SITE}/"/>\n'
         f'    <xhtml:link rel="alternate" hreflang="en" href="{SITE}/?lang=en"/>\n'
         f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/"/></url>\n'
+        f'  <url><loc>{SITE}/automatizaciones.html</loc><lastmod>{hoy}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>\n'
+        f'    <xhtml:link rel="alternate" hreflang="es" href="{SITE}/automatizaciones.html"/>\n'
+        f'    <xhtml:link rel="alternate" hreflang="en" href="{SITE}/automatizaciones.html?lang=en"/>\n'
+        f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/automatizaciones.html"/></url>\n'
         f'  <url><loc>{SITE}/legal.html</loc><lastmod>{hoy}</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>\n'
         '</urlset>\n', encoding="utf-8")
     (HERE / "robots.txt").write_text(
@@ -44,7 +49,8 @@ def main():
     (HERE / "CNAME.ejemplo").write_text(
         "# Renombra este fichero a CNAME y pon dentro tu dominio (una línea, sin https://)\n"
         "# ejemplo: denoro.es\n", encoding="utf-8")
-    print(f"index.html {n1 // 1024} KB · legal.html {n2 // 1024} KB · sitemap.xml · robots.txt")
+    print(f"index.html {n1 // 1024} KB · legal.html {n2 // 1024} KB · "
+          f"automatizaciones.html {n3 // 1024} KB · sitemap.xml · robots.txt")
 
 
 if __name__ == "__main__":
