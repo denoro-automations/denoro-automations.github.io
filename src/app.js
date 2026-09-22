@@ -141,7 +141,7 @@
     priceNote: 'Optional maintenance: €99/month. If a site changes and stops being readable, I fix it. For the first two weeks after delivery, fixes are always free. Need more links or something different? I will send you a fixed quote.',
     faqEyebrow: 'FAQ', faqTitle: 'What people usually ask me',
     q1: 'Will it work with my competitor’s store?',
-    a1: 'With Shopify and WooCommerce stores I read the whole catalogue. With the rest I read individual products, which works on the vast majority of shops because nearly all of them publish the price in a standard format. Before you pay anything I check your links and tell you if one of them is not possible.',
+    a1: 'With Shopify and WooCommerce stores I read the whole catalogue. With the rest I read individual products, which works on many shops because most publish the price in a standard format (structured data). Before you pay anything I check your links and tell you if one of them is not possible.',
     q2: 'Is it legal?',
     a2: 'I only read public, non-personal data: product name, price, stock and link — the same you would see by visiting the site. I respect each store’s robots.txt, go slowly so their servers are not bothered, and never touch anything behind a login. If a site says no, I do not watch it.',
     q3: 'Do I need a server or technical knowledge?',
