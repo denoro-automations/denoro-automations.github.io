@@ -100,7 +100,7 @@
     heroTitle: 'Know the moment a competitor drops a price. Without checking yourself.',
     heroLead: 'I watch the prices and stock of the stores you choose and send you one summary on Telegram and by email when something that affects you changes.',
     heroCta1: 'Get a quote', heroCta2: 'See what you get',
-    trust1: 'Shopify, WooCommerce and any product page', trust2: 'Public data only', trust3: 'Fixed price before we start',
+    trust1: 'Shopify, WooCommerce and single product pages', trust2: 'Public data only', trust3: 'Fixed price before we start',
     heroCap: 'Your panel: paste the links you want to watch and the system does the rest.',
     howEyebrow: 'How it works', howTitle: 'Three steps and you stop checking',
     how1t: 'You paste the links', how1p: 'A competitor’s whole store or the specific products you care about. The panel works out what each link is and shows you the prices it found before saving anything.',
