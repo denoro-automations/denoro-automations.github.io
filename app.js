@@ -2,7 +2,7 @@
 (() => {
   // Cuando n8n esté accesible desde internet, pon aquí la URL del webhook:
   // p. ej. 'https://automations.denoro.com/webhook/denoro/contacto'
-  const ENDPOINT = '';
+  const ENDPOINT = 'https://app.denoroautomations.com/webhook/denoro/contacto';
   const EMAIL = 'manelfernandezp1@gmail.com';
   // Código de GoatCounter (por ejemplo 'denoro' para denoro.goatcounter.com). Vacío = sin medición.
   const GOATCOUNTER = 'denoro';

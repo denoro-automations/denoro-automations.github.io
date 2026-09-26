@@ -10,7 +10,7 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 SRC = HERE / "src"
-SITE = "https://denoro-automations.github.io"
+SITE = "https://denoroautomations.com"
 
 
 def build_page(src_name, out_name, css):

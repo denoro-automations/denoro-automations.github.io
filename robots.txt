@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://denoro-automations.github.io/sitemap.xml
+Sitemap: https://denoroautomations.com/sitemap.xml
