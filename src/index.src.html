@@ -230,7 +230,7 @@
     <button type="button" role="tab" id="tab-fichas" aria-controls="plan-fichas" aria-selected="false" tabindex="-1" data-i18n="tab3">Fichas de producto</button>
   </div>
 
-  <div class="tabpanel" role="tabpanel" id="plan-monitor" aria-labelledby="tab-monitor" data-auto="monitor">
+  <div class="tabpanel" role="tabpanel" id="plan-monitor" aria-labelledby="tab-monitor">
     <h3 class="tabpanel-title" data-i18n="tab1">Monitor de precios</h3>
     <div class="plans">
       <article class="plan">
@@ -239,8 +239,9 @@
           <p class="price num" data-i18n="p1price">149 €</p>
           <p class="plan-sub" data-i18n="p1sub">Entrega en 4 días · 1 revisión</p>
         </header>
+        <p class="plan-what" data-i18n="m1w">Hasta 3 enlaces vigilados</p>
         <ul>
-          <li data-i18n="m1f1">Hasta 3 enlaces vigilados (una tienda entera cuenta como uno)</li>
+          <li data-i18n="m1f1">Una tienda entera cuenta como un solo enlace</li>
           <li data-i18n="m1f2">Avisos por Telegram y email, con los precios en CSV</li>
           <li data-i18n="m1f3">Tu panel para cambiar enlaces, frecuencia y umbral</li>
           <li data-i18n="m1f4">Documentación y explicación paso a paso</li>
@@ -253,10 +254,10 @@
           <p class="price num" data-i18n="p2price">349 €</p>
           <p class="plan-sub" data-i18n="p2sub">Entrega en 6 días · 2 revisiones</p>
         </header>
+        <p class="plan-what" data-i18n="m2w">Hasta 10 enlaces vigilados</p>
         <ul>
-          <li data-i18n="m2f1">Hasta 10 enlaces vigilados</li>
-          <li data-i18n="m2f2">Todo lo del Básico</li>
-          <li data-i18n="m2f3">Dejo configurados tus precios para avisarte cuando alguien te supera</li>
+          <li data-i18n="m2f1">Todo lo del Básico</li>
+          <li data-i18n="m2f2">Dejo configurados tus precios para avisarte cuando alguien te supera</li>
         </ul>
         <a class="btn primary" href="#presupuesto" data-auto="monitor" data-plan="estandar" data-i18n="planCta">Pedir presupuesto</a>
       </article>
@@ -266,8 +267,9 @@
           <p class="price num" data-i18n="p3price">599 €</p>
           <p class="plan-sub" data-i18n="p3sub">Entrega en 8 días · 2 revisiones</p>
         </header>
+        <p class="plan-what" data-i18n="m3w">Hasta 30 enlaces vigilados</p>
         <ul>
-          <li data-i18n="m3f1">Hasta 30 enlaces vigilados, con todo lo anterior</li>
+          <li data-i18n="m3f1">Todo lo del Estándar</li>
           <li data-i18n="m3f2">Informe semanal de tu tienda en PDF (Shopify o WooCommerce)</li>
           <li data-i18n="m3f3">Instalación en tu propio n8n, si lo prefieres</li>
           <li data-i18n="m3f4">1 mes de mantenimiento incluido</li>
@@ -277,7 +279,7 @@
     </div>
   </div>
 
-  <div class="tabpanel" role="tabpanel" id="plan-tienda" aria-labelledby="tab-tienda" data-auto="stock">
+  <div class="tabpanel" role="tabpanel" id="plan-tienda" aria-labelledby="tab-tienda" hidden>
     <h3 class="tabpanel-title" data-i18n="tab2">Stock, facturas, carritos y reseñas</h3>
     <div class="plans">
       <article class="plan">
@@ -286,11 +288,11 @@
           <p class="price num" data-i18n="p1price">149 €</p>
           <p class="plan-sub" data-i18n="p1sub">Entrega en 4 días · 1 revisión</p>
         </header>
+        <p class="plan-what" data-i18n="t1w">Una a elegir, en modo informe</p>
         <ul>
-          <li data-i18n="t1f0"><b>Una automatización, en modo informe</b></li>
           <li data-i18n="t1f1">Stock del proveedor en modo prueba: te dice qué cambiaría, sin tocar la tienda</li>
-          <li data-i18n="t1f2">o avisos de reseñas de tu WooCommerce o de 1 página que lo permita</li>
-          <li data-i18n="t1f3">o un recordatorio de carrito abandonado de 1 paso</li>
+          <li data-i18n="t1f2">Avisos de reseñas de tu WooCommerce o de 1 página que lo permita</li>
+          <li data-i18n="t1f3">Recordatorio de carrito abandonado de 1 paso</li>
         </ul>
         <a class="btn" href="#presupuesto" data-auto="stock" data-plan="basico" data-i18n="planCta">Pedir presupuesto</a>
       </article>
@@ -300,11 +302,11 @@
           <p class="price num" data-i18n="p2price">349 €</p>
           <p class="plan-sub" data-i18n="p2sub">Entrega en 6 días · 2 revisiones</p>
         </header>
+        <p class="plan-what" data-i18n="t2w">Una a elegir, funcionando en tu tienda</p>
         <ul>
-          <li data-i18n="t2f0"><b>Una automatización, funcionando de verdad</b></li>
           <li data-i18n="t2f1">Stock del proveedor aplicado en la tienda, con sus frenos de seguridad</li>
-          <li data-i18n="t2f2">o facturas con PDF al cliente</li>
-          <li data-i18n="t2f3">o secuencia de carritos de 3 pasos con descuento</li>
+          <li data-i18n="t2f2">Facturas con PDF al cliente</li>
+          <li data-i18n="t2f3">Secuencia de carritos de 3 pasos con descuento</li>
         </ul>
         <a class="btn primary" href="#presupuesto" data-auto="stock" data-plan="estandar" data-i18n="planCta">Pedir presupuesto</a>
       </article>
@@ -314,8 +316,8 @@
           <p class="price num" data-i18n="p3price">599 €</p>
           <p class="plan-sub" data-i18n="p3sub">Entrega en 8 días · 2 revisiones</p>
         </header>
+        <p class="plan-what" data-i18n="t3w">Dos automatizaciones y soporte</p>
         <ul>
-          <li data-i18n="t3f0"><b>Dos automatizaciones y soporte</b></li>
           <li data-i18n="t3f1">Dos a elegir entre stock del proveedor, facturas, carritos y reseñas</li>
           <li data-i18n="t3f2">1 mes de mantenimiento incluido</li>
         </ul>
@@ -324,7 +326,7 @@
     </div>
   </div>
 
-  <div class="tabpanel" role="tabpanel" id="plan-fichas" aria-labelledby="tab-fichas" data-auto="fichas">
+  <div class="tabpanel" role="tabpanel" id="plan-fichas" aria-labelledby="tab-fichas" hidden>
     <h3 class="tabpanel-title" data-i18n="tab3">Fichas de producto</h3>
     <div class="plans">
       <article class="plan">
@@ -333,8 +335,8 @@
           <p class="price num" data-i18n="p1price">149 €</p>
           <p class="plan-sub" data-i18n="p1sub">Entrega en 4 días · 1 revisión</p>
         </header>
+        <p class="plan-what" data-i18n="f1w">Hasta 100 productos</p>
         <ul>
-          <li data-i18n="f1f0"><b>Hasta 100 productos</b></li>
           <li data-i18n="f1f1">Motor de plantilla, sin coste de uso</li>
           <li data-i18n="f1f2">CSV listo para importar en tu tienda</li>
           <li data-i18n="f1f3">1 idioma</li>
@@ -347,8 +349,8 @@
           <p class="price num" data-i18n="p2price">349 €</p>
           <p class="plan-sub" data-i18n="p2sub">Entrega en 6 días · 2 revisiones</p>
         </header>
+        <p class="plan-what" data-i18n="f2w">Hasta 500 productos</p>
         <ul>
-          <li data-i18n="f2f0"><b>Hasta 500 productos</b></li>
           <li data-i18n="f2f1">Plantilla u OpenAI con tu propia clave</li>
           <li data-i18n="f2f2">Lee directamente tu Shopify o WooCommerce</li>
           <li data-i18n="f2f3">1 tono de voz a elegir</li>
@@ -361,8 +363,8 @@
           <p class="price num" data-i18n="p3price">599 €</p>
           <p class="plan-sub" data-i18n="p3sub">Entrega en 8 días · 2 revisiones</p>
         </header>
+        <p class="plan-what" data-i18n="f3w">Hasta 2.000 productos, en automático</p>
         <ul>
-          <li data-i18n="f3f0"><b>Hasta 2.000 productos y en automático</b></li>
           <li data-i18n="f3f1">Cada lunes escribe las fichas de los productos nuevos</li>
           <li data-i18n="f3f2">Español e inglés</li>
           <li data-i18n="f3f3">1 mes de mantenimiento incluido</li>
@@ -372,7 +374,7 @@
     </div>
   </div>
 
-  <p class="note reveal" data-i18n="priceNote">El informe semanal va incluido en el Premium del monitor; suelto o junto con otras, te paso presupuesto cerrado. Mantenimiento opcional: 99 €/mes, y si algo deja de funcionar lo arreglo yo. Las dos primeras semanas después de la entrega, las correcciones son gratis siempre.</p>
+  <p class="note reveal" data-i18n="priceNote">Todos los paquetes incluyen documentación, explicación paso a paso y dos semanas de correcciones gratis después de la entrega. El informe semanal va incluido en el Premium del monitor; suelto o junto con otras, te paso presupuesto cerrado. Mantenimiento opcional: 99 €/mes, y si algo deja de funcionar lo arreglo yo.</p>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -420,7 +422,7 @@
         </select></div>
       <div class="field"><label for="detalle" data-i18n="fDetalle">Qué necesitas</label><textarea id="detalle" name="detalle" required aria-describedby="detalleHint"></textarea><p class="hint" id="detalleHint"></p></div>
       <div class="row">
-        <div class="field"><label for="tienda" data-i18n="fTienda">Tu tienda (enlace)</label><input id="tienda" name="tienda" inputmode="url" autocomplete="url" placeholder="https://mitienda.com"></div>
+        <div class="field"><label for="tienda" data-i18n="fTienda">Tu tienda (enlace)</label><input id="tienda" name="tienda" inputmode="url" autocomplete="url" placeholder="https://mitienda.com" data-ph-en="https://mystore.com"></div>
         <div class="field"><label for="productos" data-i18n="fProd">Productos en tu catálogo</label>
           <select id="productos" name="productos">
             <option value="&lt;200" data-i18n="fProd1">menos de 200</option>

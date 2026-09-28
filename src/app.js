@@ -71,7 +71,7 @@
   const EN = {
     // --- catálogo de automatizaciones ---
     auEyebrow: 'Catalogue · e-commerce', auTitle: 'Seven automations that are already written',
-    auLead: 'I am not starting from scratch with you. Every one of these runs today, has a demo mode so you can watch it work before hiring anything, and its code is published for whoever you want to check it.',
+    auLead: 'I am not starting from scratch with you. Every one of these runs today, has a demo mode so you can watch it work before hiring anything, and its code is published for whoever you want to check it. The screenshots for stock, invoices, carts, reviews and product copy come from a Spanish demo store.',
     auF1t: 'Built on', auF1: 'n8n, on your server or on mine',
     auF2t: 'Shops', auF2: 'Shopify, WooCommerce, supplier CSV or XML',
     auF3t: 'From', auF3n: '€149', auF3: 'with the scope agreed in writing',
@@ -137,7 +137,7 @@
     fact2t: 'From', fact2n: '€149', fact2: 'and a fixed price before we start',
     fact3t: 'Delivery', fact3n: '4–8 days', fact3: 'depending on the package',
     gridEyebrow: 'Automations', gridTitle: 'Pick one or combine them',
-    gridLead: 'Each one takes over a task you do by hand today. These screenshots come from running them with sample data.',
+    gridLead: 'Each one takes over a task you do by hand today. These screenshots come from running them with sample data. Those for stock, invoices, carts, reviews and product copy come from a Spanish demo store, so their text is in Spanish.',
     g6: 'Watches your competitors and tells you in one message when something that affects you changes.',
     g2: 'Syncs your supplier feed with your shop and stops itself if it arrives broken.',
     g5: 'Numbers them, breaks down VAT and sends the PDF to the customer. An order is never invoiced twice.',
@@ -174,26 +174,26 @@
     demo3cta: 'See screenshots of the other six',
     priceEyebrow: 'Pricing', priceTitle: 'Fixed price before we start',
     priceLead: 'Three packages, with the same price for any automation. What goes into each one depends on which you choose:',
-    tabsLabel: 'Type of automation',
+    tabsLabel: 'Type of automation', lblHome: 'Denoro Automations, home', lblNav: 'Main', lblCookies: 'Cookie notice',
     tab1: 'Price monitor', tab2: 'Stock, invoices, carts and reviews', tab3: 'Product copy',
     pBasic: 'Basic', pStd: 'Standard · recommended', pPrem: 'Premium',
     p1price: '€149', p2price: '€349', p3price: '€599',
     p1sub: 'Delivered in 4 days · 1 revision', p2sub: 'Delivered in 6 days · 2 revisions', p3sub: 'Delivered in 8 days · 2 revisions',
-    m1f1: 'Up to 3 watched links (a whole store counts as one)', m1f2: 'Alerts on Telegram and by email, with prices as a CSV',
+    m1w: 'Up to 3 watched links', m1f1: 'A whole store counts as a single link', m1f2: 'Alerts on Telegram and by email, with prices as a CSV',
     m1f3: 'Your panel to change links, frequency and threshold', m1f4: 'Documentation and a step-by-step walkthrough',
-    m2f1: 'Up to 10 watched links', m2f2: 'Everything in Basic', m2f3: 'Your own prices set up, so you hear when someone undercuts you',
-    m3f1: 'Up to 30 watched links, with everything above', m3f2: 'Weekly PDF report of your store (Shopify or WooCommerce)',
+    m2w: 'Up to 10 watched links', m2f1: 'Everything in Basic', m2f2: 'Your own prices set up, so you hear when someone undercuts you',
+    m3w: 'Up to 30 watched links', m3f1: 'Everything in Standard', m3f2: 'Weekly PDF report of your store (Shopify or WooCommerce)',
     m3f3: 'Installed on your own n8n, if you prefer', m3f4: '1 month of maintenance included',
-    t1f0: '<b>One automation, report only</b>', t1f1: 'Supplier stock in dry-run: it tells you what would change, without touching the store',
-    t1f2: 'or review alerts for your WooCommerce store or 1 page that allows it', t1f3: 'or a 1-step abandoned cart reminder',
-    t2f0: '<b>One automation, live</b>', t2f1: 'Supplier stock applied to the store, with its safety brakes',
-    t2f2: 'or invoices with a PDF to the customer', t2f3: 'or a 3-step cart sequence with a discount',
-    t3f0: '<b>Two automations and support</b>', t3f1: 'Any two of supplier stock, invoices, carts and reviews', t3f2: '1 month of maintenance included',
-    f1f0: '<b>Up to 100 products</b>', f1f1: 'Template engine, no usage cost', f1f2: 'CSV ready to import into your store', f1f3: '1 language',
-    f2f0: '<b>Up to 500 products</b>', f2f1: 'Template or OpenAI with your own key', f2f2: 'Reads your Shopify or WooCommerce directly', f2f3: '1 tone of voice of your choice',
-    f3f0: '<b>Up to 2,000 products, on autopilot</b>', f3f1: 'Every Monday it writes the copy for new products', f3f2: 'Spanish and English', f3f3: '1 month of maintenance included',
+    t1w: 'One of your choice, report only', t1f1: 'Supplier stock in dry-run: it tells you what would change, without touching the store',
+    t1f2: 'Review alerts for your WooCommerce store or 1 page that allows it', t1f3: '1-step abandoned cart reminder',
+    t2w: 'One of your choice, live on your store', t2f1: 'Supplier stock applied to the store, with its safety brakes',
+    t2f2: 'Invoices with a PDF to the customer', t2f3: '3-step cart sequence with a discount',
+    t3w: 'Two automations and support', t3f1: 'Any two of supplier stock, invoices, carts and reviews', t3f2: '1 month of maintenance included',
+    f1w: 'Up to 100 products', f1f1: 'Template engine, no usage cost', f1f2: 'CSV ready to import into your store', f1f3: '1 language',
+    f2w: 'Up to 500 products', f2f1: 'Template or OpenAI with your own key', f2f2: 'Reads your Shopify or WooCommerce directly', f2f3: '1 tone of voice of your choice',
+    f3w: 'Up to 2,000 products, on autopilot', f3f1: 'Every Monday it writes the copy for new products', f3f2: 'Spanish and English', f3f3: '1 month of maintenance included',
     planCta: 'Get a quote',
-    priceNote: 'The weekly report is included in the monitor’s Premium; on its own or combined with others, I will send you a fixed quote. Optional maintenance: €99/month, and if something stops working I fix it. For the first two weeks after delivery, fixes are always free.',
+    priceNote: 'Every package includes documentation, a step-by-step walkthrough and two weeks of free fixes after delivery. The weekly report is included in the monitor’s Premium; on its own or combined with others, I will send you a fixed quote. Optional maintenance: €99/month, and if something stops working I fix it.',
     faqEyebrow: 'FAQ', faqTitle: 'What people usually ask me',
     q1: 'Will it work with my store?',
     a1: 'All of them work with Shopify and WooCommerce. Product copy also takes a CSV, and supplier stock reads their feed as CSV or XML. If you use another platform, tell me and I will check before you pay anything.',
@@ -265,16 +265,21 @@
       if (!el.dataset.labelEs) el.dataset.labelEs = el.getAttribute('aria-label');
       el.setAttribute('aria-label', lang === 'en' ? (EN[el.dataset.i18nLabel] || el.dataset.labelEs) : el.dataset.labelEs);
     });
+    document.documentElement.dataset.lang = lang;
     $$('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
     // las capturas del producto también cambian de idioma
     $$('[data-shot]').forEach((el) => {
-      const base = el.dataset.shot;
-      const file = `assets/${base}${lang === 'en' ? '-en' : ''}.webp`;
-      if (el.tagName === 'SOURCE') { el.srcset = file; return; }
-      if (lang === 'en') { if (!el.dataset.altEs) el.dataset.altEs = el.alt; el.alt = el.dataset.altEn || el.alt; }
-      else if (el.dataset.altEs) { el.alt = el.dataset.altEs; }
-      el.src = file;
+      const file = `assets/${el.dataset.shot}${lang === 'en' ? '-en' : ''}.webp`;
+      if (el.tagName === 'SOURCE') el.srcset = file; else el.src = file;
     });
+    // textos alternativos, marcadores de posición y etiquetas accesibles
+    const swap = (sel, attr, enKey) => $$(sel).forEach((el) => {
+      const esKey = `${enKey}Es`;
+      if (!el.dataset[esKey]) el.dataset[esKey] = el.getAttribute(attr) || '';
+      el.setAttribute(attr, lang === 'en' ? el.dataset[enKey] : el.dataset[esKey]);
+    });
+    swap('img[data-alt-en]', 'alt', 'altEn');
+    swap('[data-ph-en]', 'placeholder', 'phEn');
     const tg = $('#tgMsg'); if (tg) tg.innerHTML = TG[lang];
     const q = $('#quote'); if (q) { q.dataset.lang = lang; pista(); }
     try { localStorage.setItem('denoro_lang', lang); } catch (e) { /* sin almacenamiento: da igual */ }
@@ -369,7 +374,9 @@
     document.addEventListener('click', (e) => {
       if (menu.classList.contains('open') && !e.target.closest('.site-header')) abrir(false);
     });
-    matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) abrir(false); });
+    const ancho = matchMedia('(min-width: 1101px)');
+    const alCambiar = (e) => { if (e.matches) abrir(false); };
+    if (ancho.addEventListener) ancho.addEventListener('change', alCambiar); else if (ancho.addListener) ancho.addListener(alCambiar);   // Safari < 14
   }
 
   // ---------- pestañas de precios ----------

@@ -3,6 +3,7 @@
 
 Uso: python build.py
 """
+import hashlib
 import re
 import shutil
 from datetime import date
@@ -29,6 +30,10 @@ def build_page(src_name, out_name, css, home=True, catalogo=False):
     html = html.replace("<!--FOOTER-->", partial("footer"))
     html = html.replace("<!--COOKIES-->", partial("cookies"))
     assert "<!--" not in html.replace("<!--[", ""), f"{src_name}: queda un marcador sin sustituir"
+    # versión en la URL del JS: al publicar, el navegador no puede seguir usando el app.js viejo con el HTML nuevo
+    version = hashlib.sha1((SRC / "app.js").read_bytes()).hexdigest()[:8]
+    assert '<script src="app.js" defer></script>' in html, f"{src_name}: falta la etiqueta de app.js"
+    html = html.replace('<script src="app.js" defer></script>', f'<script src="app.js?v={version}" defer></script>')
     (HERE / out_name).write_text(html, encoding="utf-8")
     return len(html)
 

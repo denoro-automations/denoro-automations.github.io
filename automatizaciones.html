@@ -76,7 +76,7 @@ p{margin:0;text-wrap:pretty}
 .hint{color:var(--muted);font-size:var(--t-xs);line-height:1.5}
 .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1,"lnum" 1}
 .stack>*+*{margin-top:var(--s4)}
-.site-header{position:sticky;top:0;z-index:var(--z-header);background:color-mix(in srgb,var(--paper) 90%,transparent);
+.site-header{position:sticky;top:0;z-index:var(--z-header);background:var(--paper);background:color-mix(in srgb,var(--paper) 92%,transparent);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 .site-header .wrap{display:flex;align-items:center;gap:var(--s5);min-height:68px;position:relative}
 .brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:17px;letter-spacing:-.01em;flex:none}
@@ -114,8 +114,8 @@ p{margin:0;text-wrap:pretty}
   html:not(.js) .menu{order:3;width:100%;flex-wrap:wrap;gap:var(--s2) var(--s4);margin:0}
 }
 @keyframes menu-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-@media (max-width:620px){.site-header .wrap{gap:var(--s3)}.header-actions .header-cta{display:none}.brand span{display:none}
-  .js .menu{padding-inline:20px}}
+@media (max-width:760px){.site-header .wrap{gap:var(--s3)}.header-actions .header-cta{display:none}}
+@media (max-width:620px){.brand span{display:none}.js .menu{padding-inline:20px}}
 @media (max-width:360px){.menu-btn [data-i18n]{display:none}.menu-btn{padding:0 13px}}
 .lang{display:inline-flex;border:1px solid var(--rule-field);border-radius:var(--r-s);overflow:hidden;background:var(--surface)}
 .lang button{border:0;background:transparent;color:var(--muted);cursor:pointer;
@@ -211,7 +211,7 @@ figcaption{color:var(--faint);font-size:var(--t-xs);margin-top:var(--s3);max-wid
   border:1px solid var(--rule);border-radius:var(--r-l)}
 @media (min-width:880px){.plan{border:0;border-radius:0}}
 .plan.featured{background:var(--sunk)}
-.plan header{display:grid;gap:var(--s1);min-height:118px;align-content:start}
+.plan header{display:grid;gap:var(--s1);align-content:start}
 @media (max-width:879px){.plan header{min-height:0;margin-bottom:var(--s2)}}
 .plan-tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .plan.featured .plan-tag{color:var(--accent)}
@@ -269,7 +269,7 @@ footer .wrap{display:flex;gap:var(--s5);flex-wrap:wrap;align-items:center;justif
 footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
 footer a:hover{color:var(--ink);border-color:var(--ink)}
 .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-cta);
-  background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);
+  background:var(--paper);background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);
   border-top:1px solid var(--rule);padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
   animation:cta-in var(--d-base) var(--e-out)}
 @keyframes cta-in{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:none}}
@@ -349,7 +349,8 @@ html:not(.js) .tabs{display:none}
 .tabpanel .plans{margin-top:var(--s5)}
 .js .tabpanel-title{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 html:not(.js) .tabpanel{margin-top:var(--s7)}
-.tabpanel[hidden]{display:none}
+html:not(.js) .tabpanel[hidden]{display:block}
+.js .tabpanel[hidden]{display:none}
 .tabpanel:not([hidden]){animation:faq-in var(--d-enter) var(--e-out) both}
 .plan li b{color:var(--ink);font-weight:600}
 .cat-hero{padding-block:var(--s8) var(--s7);border-top:0}
@@ -387,14 +388,20 @@ html:not(.js) .tabpanel{margin-top:var(--s7)}
 .plan ul{align-content:start}
 @media (max-width:999px){.home-page .hero-index{display:none}}
 @media (max-width:420px){.hero-index-head span+span{display:none}}
+.plan-what{font-size:var(--t-body);font-weight:600;color:var(--ink);line-height:1.4;padding-top:var(--s4);border-top:1px solid var(--rule)}
+@media (min-width:880px){.plan-what{min-height:3.8em}}
+@media (max-width:620px){
+  .tabs{display:grid;grid-template-columns:1fr;gap:var(--s2)}
+  .tabs [role="tab"]{border-radius:var(--r-s);text-align:left;justify-content:flex-start;width:100%}
+}
 </style>
 </head>
 <body class="catalogo-page">
 <a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Denoro Automations, inicio"><i aria-hidden="true">D</i>Denoro <span>Automations</span></a>
-    <nav class="menu" id="menu" aria-label="Principal">
+    <a class="brand" href="./" aria-label="Denoro Automations, inicio" data-i18n-label="lblHome"><i aria-hidden="true">D</i>Denoro <span>Automations</span></a>
+    <nav class="menu" id="menu" aria-label="Principal" data-i18n-label="lblNav">
       <a href="automatizaciones.html" aria-current="page" data-i18n="navcat">Automatizaciones</a>
       <a href="./#como" data-i18n="nav1">Cómo trabajo</a>
       <a href="./#demos" data-i18n="nav2">Demos</a>
@@ -599,7 +606,7 @@ html:not(.js) .tabpanel{margin-top:var(--s7)}
   <a class="btn primary" href="./#presupuesto" data-i18n="mobileCta">Pedir presupuesto gratis</a>
 </div>
 
-<div class="cookies" id="cookieBar" hidden role="region" aria-label="Aviso de cookies">
+<div class="cookies" id="cookieBar" hidden role="region" aria-label="Aviso de cookies" data-i18n-label="lblCookies">
   <div class="wrap cookie-inner">
     <p data-i18n="cookieText">Esta web no usa cookies de publicidad ni de seguimiento. Solo guarda en tu navegador el idioma que elijas y mide visitas de forma anónima, sin cookies.</p>
     <div class="cookie-actions">
@@ -621,6 +628,6 @@ html:not(.js) .tabpanel{margin-top:var(--s7)}
   {"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Monitor de precios y stock de la competencia","description":"Vigilancia de precios y stock de tiendas competidoras con avisos por Telegram y email.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
   {"@type":"ListItem","position":7,"item":{"@type":"Service","name":"Informe semanal de la tienda","description":"Informe en PDF con ventas, productos destacados y avisos de stock, cada lunes.","provider":{"@id":"https://denoroautomations.com/#negocio"}}}]}
 </script>
-<script src="app.js" defer></script>
+<script src="app.js?v=987b88cf" defer></script>
 </body>
 </html>
