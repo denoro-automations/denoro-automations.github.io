@@ -34,22 +34,48 @@
 • Waterproof city backpack — €62.00`,
   };
 
+  // Pista y ejemplo del campo "Qué necesitas", según la automatización elegida
+  const PISTAS = {
+    es: {
+      monitor: ['Pega los enlaces que quieres vigilar, uno por línea. Vale la tienda entera o productos concretos.', 'https://competidor1.com\nhttps://competidor2.com/products/producto'],
+      stock: ['Cómo te llega el stock del proveedor (CSV, XML, enlace o email) y cada cuánto lo actualizas hoy.', 'Mi proveedor publica un CSV cada mañana en…'],
+      facturas: ['Cuántos pedidos facturas al mes, si necesitas albarán y cómo lo haces ahora.', 'Unos 200 pedidos al mes; hoy hago las facturas a mano en…'],
+      carritos: ['Si ya pides consentimiento en el checkout y cuántos pasos quieres en la secuencia.', 'Quiero un aviso a las 2 horas y otro al día siguiente con un 5 %…'],
+      resenas: ['Dónde tienes las reseñas (tu WooCommerce u otra página) y dónde quieres el aviso.', 'Las reseñas de mi tienda WooCommerce y las de…'],
+      fichas: ['Cuántos productos, en qué idioma y qué tono quieres para las fichas.', 'Unos 300 productos sin descripción, en español, tono cercano…'],
+      informe: ['Qué quieres ver cada lunes y quién tiene que recibirlo.', 'Ventas, productos más vendidos y lo que se va a agotar…'],
+      varias: ['Qué automatizaciones te interesan y qué haces hoy a mano en cada caso.', 'El stock del proveedor y las facturas…'],
+      otra: ['Qué haces hoy a mano, con qué tienda trabajas y dónde quieres los avisos.', 'Cada semana paso a mano…'],
+    },
+    en: {
+      monitor: ['Paste the links you want to watch, one per line. A whole store or specific products.', 'https://competitor1.com\nhttps://competitor2.com/products/product'],
+      stock: ['How your supplier sends stock (CSV, XML, link or email) and how often you update it today.', 'My supplier publishes a CSV every morning at…'],
+      facturas: ['How many orders you invoice a month, whether you need delivery notes and how you do it now.', 'About 200 orders a month; today I make invoices by hand in…'],
+      carritos: ['Whether you already ask for consent at checkout and how many steps you want in the sequence.', 'One reminder after 2 hours and another the next day with 5% off…'],
+      resenas: ['Where your reviews are (your WooCommerce or another page) and where you want the alert.', 'The reviews on my WooCommerce store and on…'],
+      fichas: ['How many products, in which language and what tone you want.', 'About 300 products with no description, in English, friendly tone…'],
+      informe: ['What you want to see every Monday and who should get it.', 'Sales, best sellers and what is about to run out…'],
+      varias: ['Which automations you are interested in and what you do by hand today for each one.', 'Supplier stock and invoices…'],
+      otra: ['What you do by hand today, which store platform you use and where you want the alerts.', 'Every week I manually…'],
+    },
+  };
+  const AUTOS = Object.keys(PISTAS.es);
+  function pista() {
+    const sel = document.getElementById('automatizacion'), ta = document.getElementById('detalle'), h = document.getElementById('detalleHint');
+    if (!sel || !ta || !h) return;
+    const [texto, ejemplo] = PISTAS[lang][sel.value] || PISTAS[lang].otra;
+    h.textContent = texto;
+    ta.placeholder = ejemplo;
+  }
+
   const EN = {
-    masEyebrow: 'Beyond the monitor', masTitle: 'Five more automations for your store',
-    mas1: '<b>Supplier stock</b> syncs their CSV or XML feed with your store and stops itself if it arrives broken',
-    mas2: '<b>Invoices</b> numbered, with VAT broken down by rate, as a PDF to the customer',
-    mas3: '<b>Abandoned carts</b> reminders to shoppers who opted in, and a count of what came back',
-    mas4: '<b>Reviews</b> an alert the same day a negative review lands, and a digest on Mondays',
-    mas5: '<b>Product copy</b> SEO titles and descriptions in bulk, ready to import',
-    masCta: 'See all seven and what each one does',
     // --- catálogo de automatizaciones ---
-    navcat: 'Automations',
     auEyebrow: 'Catalogue · e-commerce', auTitle: 'Seven automations that are already written',
     auLead: 'I am not starting from scratch with you. Every one of these runs today, has a demo mode so you can watch it work before hiring anything, and its code is published for whoever you want to check it.',
     auF1t: 'Built on', auF1: 'n8n, on your server or on mine',
     auF2t: 'Shops', auF2: 'Shopify, WooCommerce, supplier CSV or XML',
     auF3t: 'From', auF3n: '€149', auF3: 'with the scope agreed in writing',
-    mCada: 'Runs', mEntrega: 'Output', mEvita: 'Prevents', mMide: 'Measures', auCode: 'See the code',
+    mCada: 'Runs', mEntrega: 'Output', mEvita: 'Prevents', mMide: 'Measures', auCode: 'See the code', auAsk: 'Get a quote',
     a1k: 'Content', a1t: 'Product copy in bulk',
     a1p: 'You hand it the catalogue and it returns SEO titles, meta descriptions and HTML copy ready to import. Without making things up: any figure that is not in the product data is flagged for you to review.',
     a1l1: '<b>In</b> a CSV, your Shopify or your WooCommerce',
@@ -95,77 +121,105 @@
     auCtaT: 'Your case is not on the list?',
     auCtaP: 'Almost anything a shop repeats every week can be automated. Tell me what you do by hand and I will tell you whether it is worth it, what it would cost and how long it would take — before anything starts.',
     auCta1: 'Get a quote', auCta2: 'See pricing',
-    skip: 'Skip to content', nav1: 'How it works', nav2: 'Demos', nav3: 'Pricing', nav4: 'FAQ', navcta: 'Get a quote',
-    heroEyebrow: 'Price monitoring · e-commerce',
-    heroTitle: 'Know the moment a competitor drops a price. Without checking yourself.',
-    heroLead: 'I watch the prices and stock of the stores you choose and send you one summary on Telegram and by email when something that affects you changes.',
-    heroCta1: 'Get a quote', heroCta2: 'See what you get',
-    trust1: 'Shopify, WooCommerce and single product pages', trust2: 'Public data only', trust3: 'Fixed price before we start',
-    heroCap: 'Your panel: paste the links you want to watch and the system does the rest.',
-    howEyebrow: 'How it works', howTitle: 'Three steps and you stop checking',
-    how1t: 'You paste the links', how1p: 'A competitor’s whole store or the specific products you care about. The panel works out what each link is and shows you the prices it found before saving anything.',
-    how2t: 'I check every few hours', how2p: 'Every 1, 3, 6, 12 or 24 hours — your call. I keep the latest price snapshot of every product and compare it with the previous check.',
-    how3p3: 'You get told, with judgement', how3p: 'One message with what changed, not an alert per product. And if you add your own price, I tell you when someone goes below it.',
-    chip1: 'Price drops', chip2: 'Price rises', chip3: 'Out of stock', chip4: 'Back in stock', chip5: 'New and removed products', chip6: 'They are undercutting you',
-    demoEyebrow: 'Real demos', demoTitle: 'This is exactly what you get',
+    // --- común ---
+    skip: 'Skip to content', navcat: 'Automations', nav1: 'How I work', nav2: 'Demos', nav3: 'Pricing', nav4: 'FAQ',
+    navcta: 'Get a quote', navMenu: 'Menu', mobileCta: 'Get a free quote',
+    footNote: 'E-commerce automation · Spain', footLegal: 'Legal notice', footPriv: 'Privacy', footHome: 'Home',
+    heroIndexT: 'The seven automations', heroIndexR: 'runs',
+    heroIndexF: 'All of them with a demo mode and their code published on GitHub.',
+    hic6: 'every 1–24 h', hic2: 'every 4 h', hic5: 'hourly', hic3: 'every 30 min', hic4: 'every 2 h', hic1: 'on demand or Mondays', hic7: 'Mondays, 8:00',
+    // --- portada ---
+    heroEyebrow: 'Automation for online stores',
+    heroTitle: 'What your store repeats every week, done on its own.',
+    heroLead: 'I set up seven tested n8n automations for Shopify and WooCommerce. A fixed price, and you watch it run in demo mode before it touches your store.',
+    heroCta1: 'Get a quote', heroCta2: 'See the automations',
+    fact1t: 'Who it is for', fact1: 'Small and mid-sized online stores on Shopify or WooCommerce',
+    fact2t: 'From', fact2n: '€149', fact2: 'and a fixed price before we start',
+    fact3t: 'Delivery', fact3n: '4–8 days', fact3: 'depending on the package',
+    gridEyebrow: 'Automations', gridTitle: 'Pick one or combine them',
+    gridLead: 'Each one takes over a task you do by hand today. These screenshots come from running them with sample data.',
+    g6: 'Watches your competitors and tells you in one message when something that affects you changes.',
+    g2: 'Syncs your supplier feed with your shop and stops itself if it arrives broken.',
+    g5: 'Numbers them, breaks down VAT and sends the PDF to the customer. An order is never invoiced twice.',
+    g3: 'Reminds opted-in shoppers about their cart and tells you how much came back.',
+    g4: 'Tells you the same day a negative review lands, while replying still matters.',
+    g1: 'SEO titles, meta descriptions and HTML copy for the whole catalogue, ready to import.',
+    g7: 'Every Monday, a PDF with sales, orders, what moves and what is about to run out.',
+    gOtraT: 'Something else you repeat every week?',
+    gOtraP: 'Tell me what you do by hand and I will tell you whether it is worth automating, what it would cost and how long it would take.',
+    gOtraCta: 'Get a quote', gAll: 'See them in detail',
+    howEyebrow: 'How I work', howTitle: 'From doing it by hand to done on its own, in three steps',
+    how1t: 'You tell me what you repeat', how1p: 'Which task eats your time, which store platform you use and where you want the alerts. I reply with a fixed price and a delivery date.',
+    how2t: 'You see it in demo mode', how2p: 'Before it touches your store, the automation runs in demo mode and shows you what it would do. If something does not fit, it gets adjusted before going live.',
+    how3t: 'I leave it running and documented', how3p: 'On my server or on your own n8n. I walk you through how it works, and for the first two weeks fixes are free.',
+    demoEyebrow: 'Real demos', demoTitle: 'Inside: the price monitor',
+    demoLead: 'The most complete of the seven, with its own client panel. This is what you get, with sample data.',
+    winPanel: 'client panel', winCheck: 'checking a link', winAlert: 'email alert',
+    cap1: 'Preview when you add a link. Sample data.',
     demo1t: 'Paste a link and see what I understood',
     demo1p: 'Before anything is saved, the panel shows you the first products with their prices. If a store blocks automated requests, I say so clearly instead of failing silently.',
     demo1l1b: 'Whole store', demo1l1: 'Shopify and WooCommerce, full catalogue.',
     demo1l2b: 'Single product', demo1l2: 'almost any store, with its price and stock.',
     demo1l3b: 'Your price', demo1l3: 'so I only ping you when they undercut you.',
-    fact1t: 'Who it is for', fact1: 'Small and mid-sized online stores on Shopify or WooCommerce',
-    fact2t: 'From', fact2: 'and a fixed price before we start',
-    fact3t: 'Delivery', fact3n: '4–8 days', fact3: 'depending on the package',
-    winPanel: 'client panel', winCheck: 'checking a link', winMail: 'weekly report', winAlert: 'email alert',
-    detectsLabel: 'What you get told',
+    demo1l4b: 'Frequency', demo1l4: 'every 1, 3, 6, 12 or 24 hours, your call.',
     tgTime: 'today · 8:00',
     demo2t: 'One summary, not a hundred notifications',
     demo2p: 'The alert arrives on Telegram and by email, with the full detail and a CSV you can open in Excel. If a site fails once, I keep quiet: I only warn you if it keeps failing.',
     demo2h: 'Example with sample data from a clothing store.',
-    demo3t: 'Weekly report of your own store',
-    demo3p: 'Besides the monitor, every Monday you can get a PDF with how your week went: sales, orders, average order value, top products and what stock to reorder. It connects to Shopify or WooCommerce.',
-    demo3cta: 'See the code on GitHub',
+    detectsLabel: 'What you get told',
+    chip1: 'Price drops', chip2: 'Price rises', chip3: 'Out of stock', chip4: 'Back in stock', chip5: 'New and removed products', chip6: 'They are undercutting you',
+    heroCap: 'Your panel: paste the links you want to watch and the system does the rest.',
+    demo3t: 'Your panel, always at hand',
+    demo3p: 'From the panel you change the links, the frequency and from what difference you want to be told. It opens on your phone or computer, with a private link.',
+    demo3cta: 'See screenshots of the other six',
     priceEyebrow: 'Pricing', priceTitle: 'Fixed price before we start',
-    priceLead: 'Tell me which sites you want to watch, I send you a price and a delivery date, and there are no surprises.',
-    fact2n: '€149',
+    priceLead: 'Three packages, with the same price for any automation. What goes into each one depends on which you choose:',
+    tabsLabel: 'Type of automation',
+    tab1: 'Price monitor', tab2: 'Stock, invoices, carts and reviews', tab3: 'Product copy',
+    pBasic: 'Basic', pStd: 'Standard · recommended', pPrem: 'Premium',
     p1price: '€149', p2price: '€349', p3price: '€599',
-    p1tag: 'Basic', p1sub: 'Delivered in 4 days',
-    p1f1: 'Up to 3 watched links (a whole store counts as one)', p1f2: 'Alerts on Telegram and by email, with prices as a CSV', p1f3: 'Your panel to change links, frequency and threshold', p1f4: 'Documentation and a step-by-step walkthrough',
-    p2tag: 'Standard · most popular', p2sub: 'Delivered in 6 days',
-    p2f1: 'Up to 10 watched links', p2f2: 'Everything in Basic',
-    p2f3: 'Your own prices set up, so you hear when someone undercuts you',
-    p3tag: 'Premium', p3sub: 'Delivered in 8 days',
-    p3f1: 'Up to 30 watched links, with everything above', p3f2: 'Weekly PDF report of your store (Shopify or WooCommerce)',
-    p3f3: 'Installed on your own n8n, if you prefer', p3f4: '1 month of maintenance included',
-    planCta: 'Get a quote', planCta2: 'Get a quote',
-    priceNote: 'Optional maintenance: €99/month. If a site changes and stops being readable, I fix it. For the first two weeks after delivery, fixes are always free. Need more links or something different? I will send you a fixed quote.',
+    p1sub: 'Delivered in 4 days · 1 revision', p2sub: 'Delivered in 6 days · 2 revisions', p3sub: 'Delivered in 8 days · 2 revisions',
+    m1f1: 'Up to 3 watched links (a whole store counts as one)', m1f2: 'Alerts on Telegram and by email, with prices as a CSV',
+    m1f3: 'Your panel to change links, frequency and threshold', m1f4: 'Documentation and a step-by-step walkthrough',
+    m2f1: 'Up to 10 watched links', m2f2: 'Everything in Basic', m2f3: 'Your own prices set up, so you hear when someone undercuts you',
+    m3f1: 'Up to 30 watched links, with everything above', m3f2: 'Weekly PDF report of your store (Shopify or WooCommerce)',
+    m3f3: 'Installed on your own n8n, if you prefer', m3f4: '1 month of maintenance included',
+    t1f0: '<b>One automation, report only</b>', t1f1: 'Supplier stock in dry-run: it tells you what would change, without touching the store',
+    t1f2: 'or review alerts for your WooCommerce store or 1 page that allows it', t1f3: 'or a 1-step abandoned cart reminder',
+    t2f0: '<b>One automation, live</b>', t2f1: 'Supplier stock applied to the store, with its safety brakes',
+    t2f2: 'or invoices with a PDF to the customer', t2f3: 'or a 3-step cart sequence with a discount',
+    t3f0: '<b>Two automations and support</b>', t3f1: 'Any two of supplier stock, invoices, carts and reviews', t3f2: '1 month of maintenance included',
+    f1f0: '<b>Up to 100 products</b>', f1f1: 'Template engine, no usage cost', f1f2: 'CSV ready to import into your store', f1f3: '1 language',
+    f2f0: '<b>Up to 500 products</b>', f2f1: 'Template or OpenAI with your own key', f2f2: 'Reads your Shopify or WooCommerce directly', f2f3: '1 tone of voice of your choice',
+    f3f0: '<b>Up to 2,000 products, on autopilot</b>', f3f1: 'Every Monday it writes the copy for new products', f3f2: 'Spanish and English', f3f3: '1 month of maintenance included',
+    planCta: 'Get a quote',
+    priceNote: 'The weekly report is included in the monitor’s Premium; on its own or combined with others, I will send you a fixed quote. Optional maintenance: €99/month, and if something stops working I fix it. For the first two weeks after delivery, fixes are always free.',
     faqEyebrow: 'FAQ', faqTitle: 'What people usually ask me',
-    q1: 'Will it work with my competitor’s store?',
-    a1: 'With Shopify and WooCommerce stores I read the whole catalogue. With the rest I read individual products, which works on many shops because most publish the price in a standard format (structured data). Before you pay anything I check your links and tell you if one of them is not possible.',
-    q2: 'Is it legal?',
-    a2: 'I only read public, non-personal data: product name, price, stock and link — the same you would see by visiting the site. I respect each store’s robots.txt, go slowly so their servers are not bothered, and never touch anything behind a login. If a site says no, I do not watch it.',
-    q3: 'Do I need a server or technical knowledge?',
-    a3: 'No. You just receive the alerts wherever suits you: email or Telegram. If you would rather have everything running on your own server or your own n8n account, I set it up there and leave it documented.',
-    q4: 'What if the competitor’s site changes?',
-    a4: 'It happens, which is why the system tells you when it can no longer read a link instead of going quiet. For the first two weeks I fix it for free; after that, with monthly maintenance.',
-    q5: 'How long does it take?',
-    a5: 'Between 4 and 8 days depending on the package. Before starting I confirm the scope in writing, and you pay half up front and half on delivery.',
+    q1: 'Will it work with my store?',
+    a1: 'All of them work with Shopify and WooCommerce. Product copy also takes a CSV, and supplier stock reads their feed as CSV or XML. If you use another platform, tell me and I will check before you pay anything.',
+    q2: 'Do I need a server or technical knowledge?',
+    a2: 'No. You just receive the alerts, reports or PDFs wherever suits you: email or Telegram. If you would rather have everything running on your own server or your own n8n account, I set it up there and leave it documented.',
+    q3: 'What if something changes or breaks?',
+    a3: 'They are built to speak up instead of going quiet: the monitor tells you when it can no longer read a link, and stock sync blocks itself if the supplier feed arrives broken. For the first two weeks I fix it for free; after that, with monthly maintenance.',
+    q4: 'How long does it take and how do I pay?',
+    a4: 'Between 4 and 8 days depending on the package. Before starting I confirm the scope in writing, and you pay half up front and half on delivery.',
+    q5: 'Is it legal to watch competitors’ prices?',
+    a5: 'I only read public, non-personal data: product name, price, stock and link — the same you would see by visiting the site. I respect each store’s robots.txt, go slowly so their servers are not bothered, and never touch anything behind a login. If a site says no, I do not watch it.',
     q6: 'Can you watch Amazon or Zara?',
     a6: 'Very large sites block automated requests, so I do not promise them. For marketplaces there are usually alternatives (their own APIs or official reports) and I tell you before you spend any money.',
-    formEyebrow: 'Quote', formTitle: 'Tell me what you want to watch',
+    q7: 'Do the cart reminders and invoices follow the rules?',
+    a7: 'Cart reminders only go to shoppers who opted in, and the email is signed by your store. Invoices carry a correct sequence and VAT breakdown, but this is not certified Verifactu software (the Spanish e-invoicing rules): before we start I explain what that means for you.',
+    formEyebrow: 'Quote', formTitle: 'Tell me what you want to automate',
     formLead: 'I reply with a fixed price and a date. If what you need cannot be done properly, I say so and you pay nothing for asking.',
     fl1b: 'Reply within 24 h', fl1: 'on working days.',
-    fl2b: 'No commitment', fl2: 'the quote and the check of your links are free.',
+    fl2b: 'No commitment', fl2: 'the quote and the preliminary check are free.',
     fl3b: 'Your data', fl3: 'I only use it to reply to you.',
-    fNombre: 'Name', fEmail: 'Email', fTienda: 'Your store (link)', fComp: 'Sites you want to watch',
-    fCompHint: 'One link per line. A whole store or specific products.',
-    fProd: 'Approximate products', fProd1: 'fewer than 200', fProd2: 'between 200 and 1,000', fProd3: 'more than 1,000', fProd4: 'not sure',
-    cap1: 'Preview when you add a link. Sample data.', cap2: 'Weekly report as a PDF. Sample data.',
+    fNombre: 'Name', fEmail: 'Email', fTienda: 'Your store (link)', fAuto: 'What you are interested in',
+    fAutoVarias: 'Several of them', fAutoOtra: 'Something else / not sure yet', fDetalle: 'What you need',
+    fProd: 'Products in your catalogue', fProd1: 'fewer than 200', fProd2: 'between 200 and 1,000', fProd3: 'more than 1,000', fProd4: 'not sure',
     fPlan: 'Package that fits you', fPlan1: 'Basic · €149', fPlan2: 'Standard · €349', fPlan3: 'Premium · €599', fPlan4: 'Recommend me one',
-    fMsg: 'Anything else I should know (optional)', fSend: 'Send and get a price',
-    footNote: 'E-commerce automation · Spain', footLegal: 'Legal notice', footPriv: 'Privacy', footHome: 'Home',
+    fSend: 'Send and get a price',
     fConsent: 'I have read and accept the <a href="legal.html#privacidad">privacy policy</a>. Your data is only used to reply to you.',
-    mobileCta: 'Get a free quote',
     cookieText: 'This site uses no advertising or tracking cookies. It only stores the language you pick in your browser and counts visits anonymously, without cookies.',
     cookieOk: 'Got it', cookieNo: 'No measuring', cookieMore: 'More information',
     legalTitle: 'Legal notice and privacy', legalLead: 'Who is behind this site, what data is collected and what you can do about it.',
@@ -176,7 +230,7 @@
     lh1d: 'What the service does and does not do', lp4: 'Depending on the automation, three kinds of information are handled.<br><br><b>Competitor prices and stock.</b> Only public information from product pages is read (name, price, availability and link). No personal data is extracted, no private or password-protected areas are accessed, no protection measures are bypassed, and each site’s robots.txt is respected. If a store does not allow automated reading, it is not monitored.<br><br><b>Reviews.</b> The reviews read are those of the client’s own store (through their WooCommerce) or of public pages whose robots.txt allows it. They include the public name of the author, which only appears in the alert the client receives: for each review a fingerprint is kept to avoid repeat alerts, not its text.<br><br><b>The client’s store data</b> (orders, carts, catalogue and stock). It is processed on behalf of the client, who is the controller, inside their own systems or the n8n they choose, and only for the automation agreed. Before work starts, the processing agreement is put in writing (Article 28 GDPR).',
     lh1e: 'Applicable law', lp5: 'This site is governed by Spanish law. For any dispute, the parties submit to the courts of the owner\u2019s domicile, unless the law requires otherwise.',
     lh2: 'Privacy policy', lh2a: 'Who processes your data', lp6: 'Denoro Automations, contactable at <a href="mailto:manelfernandezp1@gmail.com">manelfernandezp1@gmail.com</a>.',
-    lh2b: 'What data and what for', lp7: 'Only what you type in the quote form: name, email, your store link, the sites you want to watch, the approximate number of products, the package you are interested in and your message. It is used to reply and prepare the quote you asked for, and nothing else. No newsletters, and nothing is sold or shared for advertising.',
+    lh2b: 'What data and what for', lp7: 'Only what you type in the quote form: name, email, your store link, the automation you are interested in, what you tell me you need (for example, the sites you want to watch), the approximate size of your catalogue and the package that fits you. It is used to reply and prepare the quote you asked for, and nothing else. No newsletters, and nothing is sold or shared for advertising.',
     lh2c: 'Why it is lawful', lp8: 'Because you asked for it: the processing is based on your consent and on steps prior to a possible contract (articles 6.1.a and 6.1.b GDPR).',
     lh2d: 'How long it is kept', lp9: 'If we do not end up working together, one year from your last message. If you hire me, for the duration of the relationship and afterwards for as long as tax and legal obligations require.',
     lh2e: 'Who else sees it', lp10: 'Messages arrive by email (Google Ireland Ltd., Gmail) and as a Telegram alert (Telegram Messenger). The form is processed in n8n, hosted on my own machine in Spain. None of them use your data for anything else. Where a provider is outside the EU, the transfer relies on the European Commission\u2019s standard contractual clauses.',
@@ -200,15 +254,17 @@
     const dict = lang === 'en' ? EN : ES;
     $$('[data-i18n]').forEach((el) => { const v = dict[el.dataset.i18n]; if (v !== undefined) el.innerHTML = v; });
     document.documentElement.lang = lang;
-    const legal = document.body.classList.contains('legal-page') || location.pathname.endsWith('legal.html');
-    const catalogo = document.body.classList.contains('catalogo-page');
-    document.title = legal
-      ? (lang === 'en' ? 'Legal notice and privacy · Denoro Automations' : 'Aviso legal y privacidad · Denoro Automations')
-      : (catalogo
-        ? (lang === 'en' ? 'Automations for online stores · Denoro Automations'
-                         : 'Automatizaciones para tiendas online · Denoro Automations')
-        : (lang === 'en' ? 'Competitor price monitoring for online stores · Denoro Automations'
-                         : 'Monitor de precios de la competencia para tiendas online · Denoro Automations'));
+    const pagina = document.body.classList.contains('legal-page') ? 'legal'
+      : document.body.classList.contains('catalogo-page') ? 'catalogo' : 'inicio';
+    document.title = {
+      legal: { es: 'Aviso legal y privacidad · Denoro Automations', en: 'Legal notice and privacy · Denoro Automations' },
+      catalogo: { es: 'Automatizaciones para tiendas online · Denoro Automations', en: 'Automations for online stores · Denoro Automations' },
+      inicio: { es: 'Automatizaciones para tiendas online con n8n · Denoro Automations', en: 'n8n automations for online stores · Denoro Automations' },
+    }[pagina][lang];
+    $$('[data-i18n-label]').forEach((el) => {
+      if (!el.dataset.labelEs) el.dataset.labelEs = el.getAttribute('aria-label');
+      el.setAttribute('aria-label', lang === 'en' ? (EN[el.dataset.i18nLabel] || el.dataset.labelEs) : el.dataset.labelEs);
+    });
     $$('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
     // las capturas del producto también cambian de idioma
     $$('[data-shot]').forEach((el) => {
@@ -220,7 +276,7 @@
       el.src = file;
     });
     const tg = $('#tgMsg'); if (tg) tg.innerHTML = TG[lang];
-    const q = $('#quote'); if (q) q.dataset.lang = lang;
+    const q = $('#quote'); if (q) { q.dataset.lang = lang; pista(); }
     try { localStorage.setItem('denoro_lang', lang); } catch (e) { /* sin almacenamiento: da igual */ }
   }
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -298,8 +354,51 @@
     }
   }
 
+  // ---------- menú desplegable (pantallas estrechas) ----------
+  const menuBtn = $('.menu-btn'), menu = $('#menu');
+  if (menuBtn && menu) {
+    const abrir = (si) => {
+      menuBtn.setAttribute('aria-expanded', String(si));
+      menu.classList.toggle('open', si);
+    };
+    menuBtn.addEventListener('click', () => abrir(menuBtn.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (e) => { if (e.target.closest('a')) abrir(false); });
+    addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('open')) { abrir(false); menuBtn.focus(); }
+    });
+    document.addEventListener('click', (e) => {
+      if (menu.classList.contains('open') && !e.target.closest('.site-header')) abrir(false);
+    });
+    matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) abrir(false); });
+  }
+
+  // ---------- pestañas de precios ----------
+  const tabs = $$('[role="tab"]');
+  const elegirTab = (tab, foco) => {
+    tabs.forEach((t) => {
+      const si = t === tab;
+      t.setAttribute('aria-selected', String(si));
+      t.tabIndex = si ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !si;
+    });
+    if (foco) tab.focus();
+  };
+  if (tabs.length) {
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => elegirTab(t));
+      t.addEventListener('keydown', (e) => {
+        const n = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        if (n) { e.preventDefault(); elegirTab(tabs[(i + n + tabs.length) % tabs.length], true); }
+        if (e.key === 'Home') { e.preventDefault(); elegirTab(tabs[0], true); }
+        if (e.key === 'End') { e.preventDefault(); elegirTab(tabs[tabs.length - 1], true); }
+      });
+    });
+    elegirTab(tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0]);
+  }
+
   // ---------- sección actual en el menú ----------
-  const navLinks = $$('nav a[href^="#"]:not(.btn)');
+  const navLinks = $$('.menu a[href^="#"]:not(.btn)');
   if (navLinks.length) {
     const marca = (id) => navLinks.forEach((a) => {
       if (a.getAttribute('href') === `#${id}`) a.setAttribute('aria-current', 'true');
@@ -337,12 +436,12 @@
 
   // ---------- formulario ----------
   const T = {
-    es: { falta: 'Rellena tu nombre, un email válido y al menos un enlace que quieras vigilar.',
+    es: { falta: 'Rellena tu nombre, un email válido y cuéntame qué necesitas.',
           enviando: 'Enviando…', ok: '¡Recibido! Te respondo en menos de 24 h laborables con precio y fecha.',
           mail: 'No he podido enviarlo desde la web. Pulsa aquí para mandármelo por correo (ya va todo escrito).',
           send: 'Enviar y recibir precio', consent: 'Marca la casilla de la política de privacidad para poder responderte.',
           rapido: 'Revisa los datos y vuelve a pulsar Enviar.' },
-    en: { falta: 'Please add your name, a valid email and at least one link you want to watch.',
+    en: { falta: 'Please add your name, a valid email and tell me what you need.',
           enviando: 'Sending…', ok: 'Got it! I reply within 24 working hours with a price and a date.',
           mail: 'I could not send it from the site. Click here to email it to me instead (everything is written for you).',
           send: 'Send and get a price', consent: 'Please tick the privacy policy box so I can reply to you.',
@@ -351,14 +450,31 @@
   const form = $('#quote'), out = $('#formMsg'), btn = $('#send');
   if (form) $('#abierto').value = String(Date.now());
   const msg = (html, kind) => { out.innerHTML = html ? `<p class="msg ${kind}">${html}</p>` : ''; };
+  const etiqueta = (id) => { const o = $(`#${id}`); return o ? o.options[o.selectedIndex].text : ''; };
   const mailtoLink = (d) => {
-    const body = (lang === 'en' ? 'Name' : 'Nombre') + `: ${d.nombre}\nEmail: ${d.email}\n`
-      + (lang === 'en' ? 'My store' : 'Mi tienda') + `: ${d.tienda}\n`
-      + (lang === 'en' ? 'Sites to watch' : 'Webs a vigilar') + `:\n${d.competidores}\n`
-      + (lang === 'en' ? 'Products' : 'Productos') + `: ${d.productos}\n`
-      + (lang === 'en' ? 'Package' : 'Paquete') + `: ${d.paquete}\n\n${d.mensaje}`;
-    return `mailto:${EMAIL}?subject=${encodeURIComponent(lang === 'en' ? 'Quote request · Denoro' : 'Solicitud de presupuesto · Denoro')}&body=${encodeURIComponent(body)}`;
+    const en = lang === 'en';
+    const body = (en ? 'Name' : 'Nombre') + `: ${d.nombre}\nEmail: ${d.email}\n`
+      + (en ? 'My store' : 'Mi tienda') + `: ${d.tienda}\n`
+      + (en ? 'Interested in' : 'Me interesa') + `: ${etiqueta('automatizacion')}\n`
+      + (en ? 'Products' : 'Productos') + `: ${etiqueta('productos')}\n`
+      + (en ? 'Package' : 'Paquete') + `: ${etiqueta('paquete')}\n\n${d.detalle}`;
+    return `mailto:${EMAIL}?subject=${encodeURIComponent(en ? 'Quote request · Denoro' : 'Solicitud de presupuesto · Denoro')}&body=${encodeURIComponent(body)}`;
   };
+
+  // elegir automatización y paquete desde un enlace (?auto=stock o un botón de la tabla de precios)
+  const preseleccion = (auto, plan) => {
+    const a = $('#automatizacion'), p = $('#paquete');
+    if (a && AUTOS.includes(auto)) a.value = auto;
+    if (p && plan && [...p.options].some((o) => o.value === plan)) p.value = plan;
+    pista();
+  };
+  if (form) {
+    const qs = new URLSearchParams(location.search);
+    if (qs.get('auto')) preseleccion(qs.get('auto'), qs.get('plan'));
+    $('#automatizacion').addEventListener('change', pista);
+    $$('a[href$="#presupuesto"][data-auto]').forEach((a) => a.addEventListener('click', () => preseleccion(a.dataset.auto, a.dataset.plan)));
+    pista();
+  }
 
   // marca el campo con error, lo enfoca y lo limpia al escribir (WCAG 3.3.1)
   const limpiar = () => $$('#quote [aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
@@ -381,11 +497,13 @@
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email || '');
     if (!d.nombre?.trim()) return fallo($('#nombre'), t.falta);
     if (!emailOk) return fallo($('#email'), t.falta);
-    if (!d.competidores?.trim()) return fallo($('#competidores'), t.falta);
+    if (!d.detalle?.trim()) return fallo($('#detalle'), t.falta);
     if (!$('#privacidad').checked) return fallo($('#privacidad'), t.consent);
     limpiar();
     msg('', ''); btn.disabled = true; btn.textContent = t.enviando;
-    const payload = { ...d, idioma: lang, origen: location.href, enviado: new Date().toISOString() };
+    // competidores y paquete combinado: compatibles con la versión anterior del workflow de n8n
+    const payload = { ...d, plan: d.paquete, paquete: `${d.automatizacion} · ${d.paquete}`, competidores: d.detalle,
+      idioma: lang, origen: location.href, enviado: new Date().toISOString() };
     let sent = false;
     if (ENDPOINT) {
       try {
@@ -394,7 +512,7 @@
       } catch (e) { sent = false; }
     }
     btn.disabled = false; btn.textContent = t.send;
-    if (sent) { form.reset(); msg(t.ok, 'ok'); }
+    if (sent) { form.reset(); pista(); msg(t.ok, 'ok'); }
     else msg(`<a href="${mailtoLink(d)}">${t.mail}</a>`, 'err');
   });
 })();

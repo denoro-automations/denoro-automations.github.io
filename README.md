@@ -3,10 +3,15 @@
 Landing bilingüe (español e inglés) publicada en GitHub Pages.
 
 ```
-src/          index.src.html · legal.src.html · styles.css · app.js   ← se edita aquí
-build.py      mete el CSS en el HTML y genera sitemap.xml y robots.txt
-index.html    legal.html    app.js    assets/    ← lo que se publica
+src/          index.src.html · automatizaciones.src.html · legal.src.html · styles.css · app.js   ← se edita aquí
+src/partials/ header.html · footer.html · cookies.html   ← cabecera, pie y aviso comunes a las tres páginas
+build.py      mete el CSS y los trozos comunes en el HTML y genera sitemap.xml y robots.txt
+index.html    automatizaciones.html    legal.html    app.js    assets/    ← lo que se publica
 ```
+
+La cabecera es **una sola** (`src/partials/header.html`): si añades o cambias un apartado del menú, cámbialo ahí
+y se aplica a las tres páginas. Los textos en inglés están en `src/app.js` (objeto `EN`), con la misma clave `data-i18n`.
+Capturas del catálogo: `assets/auto-*.webp` (800×500), recortadas de `kit-publicacion/capturas/` y de las del panel.
 
 Después de tocar cualquier cosa de `src/`: `python build.py`.
 

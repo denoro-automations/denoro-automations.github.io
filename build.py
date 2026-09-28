@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera la web lista para publicar: mete el CSS en el HTML y copia el JS.
+"""Genera la web lista para publicar: mete el CSS y la cabecera/pie comunes en el HTML y copia el JS.
 
 Uso: python build.py
 """
@@ -13,9 +13,22 @@ SRC = HERE / "src"
 SITE = "https://denoroautomations.com"
 
 
-def build_page(src_name, out_name, css):
+def partial(name, **vals):
+    """Trozos comunes (cabecera, pie, aviso de cookies): una sola copia para las tres páginas."""
+    html = (SRC / "partials" / f"{name}.html").read_text(encoding="utf-8")
+    for k, v in vals.items():
+        html = html.replace("{" + k + "}", v)
+    return html.rstrip("\n")
+
+
+def build_page(src_name, out_name, css, home=True, catalogo=False):
     html = (SRC / src_name).read_text(encoding="utf-8")
     html = html.replace("<style>/*CSS*/</style>", f"<style>\n{css}\n</style>")
+    html = html.replace("<!--HEADER-->", partial(
+        "header", home="" if home else "./", cat_current=' aria-current="page"' if catalogo else ""))
+    html = html.replace("<!--FOOTER-->", partial("footer"))
+    html = html.replace("<!--COOKIES-->", partial("cookies"))
+    assert "<!--" not in html.replace("<!--[", ""), f"{src_name}: queda un marcador sin sustituir"
     (HERE / out_name).write_text(html, encoding="utf-8")
     return len(html)
 
@@ -25,8 +38,8 @@ def main():
     css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)                      # fuera comentarios
     css = re.sub(r"\n\s*\n", "\n", css).strip()
     n1 = build_page("index.src.html", "index.html", css)
-    n2 = build_page("legal.src.html", "legal.html", css)
-    n3 = build_page("automatizaciones.src.html", "automatizaciones.html", css)
+    n2 = build_page("legal.src.html", "legal.html", css, home=False)
+    n3 = build_page("automatizaciones.src.html", "automatizaciones.html", css, home=False, catalogo=True)
     shutil.copy(SRC / "app.js", HERE / "app.js")
 
     hoy = date.today().isoformat()
