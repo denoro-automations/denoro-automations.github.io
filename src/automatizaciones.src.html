@@ -46,7 +46,7 @@
     <h1 class="reveal" data-i18n="auTitle">Siete automatizaciones que ya están escritas</h1>
     <p class="lead reveal" data-i18n="auLead">No empiezo de cero contigo. Cada una de estas corre hoy, tiene su modo de prueba para que la veas funcionando antes de contratar nada, y su código está publicado para que lo mire quien quieras.</p>
     <dl class="facts reveal">
-      <div><dt data-i18n="auF1t">Montadas sobre</dt><dd data-i18n="auF1">n8n, en tu servidor o en el mío</dd></div>
+      <div><dt data-i18n="auF1t">Montadas sobre</dt><dd data-i18n="auF1">n8n, instaladas en tu propia cuenta</dd></div>
       <div><dt data-i18n="auF2t">Tiendas</dt><dd data-i18n="auF2">Shopify, WooCommerce, CSV o XML del proveedor</dd></div>
       <div><dt data-i18n="auF3t">Desde</dt><dd><span class="num" data-i18n="auF3n">149 €</span> <span data-i18n="auF3">con el alcance cerrado por escrito</span></dd></div>
     </dl>
@@ -111,7 +111,7 @@
       <div class="auto-shot"><img src="assets/auto-facturas.webp" width="800" height="500" alt="Factura en PDF con numeración, datos del cliente y líneas con su IVA" data-alt-en="PDF invoice with numbering, customer details and lines with their VAT (sample in Spanish)" loading="lazy" decoding="async"></div>
       <p class="eyebrow" data-i18n="a5k">Administración</p>
       <h2 data-i18n="a5t">Facturas y albaranes</h2>
-      <p data-i18n="a5p">Numera, calcula el IVA por tipos, genera el PDF con tu marca y se lo manda al cliente. Un pedido ya facturado no se vuelve a numerar nunca. No es un software certificado Verifactu: antes de empezar te explico qué implica.</p>
+      <p data-i18n="a5p">Numera, calcula el IVA por tipos, genera el PDF con tu marca y se lo manda al cliente. Un pedido ya facturado no se vuelve a numerar nunca. No es un software certificado Verifactu, así que sirve hasta que te obligue (1 de enero de 2027 si eres sociedad, 1 de julio de 2027 si eres autónomo); a partir de ahí la dejo en albaranes y libro en CSV para tu programa de facturación.</p>
       <ul class="checklist">
         <li data-i18n="a5l1"><b>Numeración</b> serie correlativa y desglose de IVA correctos</li>
         <li data-i18n="a5l2"><b>Albarán</b> en el mismo PDF si lo necesitas</li>
@@ -130,11 +130,11 @@
       <div class="auto-shot"><img src="assets/auto-carritos.webp" width="800" height="500" alt="Resumen de carritos abandonados: avisos enviados, dinero en juego y carritos recuperados" data-alt-en="Abandoned cart summary: reminders sent, money at stake and carts recovered (sample in Spanish)" loading="lazy" decoding="async"></div>
       <p class="eyebrow" data-i18n="a3k">Ventas</p>
       <h2 data-i18n="a3t">Carritos abandonados</h2>
-      <p data-i18n="a3p">Una secuencia de avisos al comprador que se quedó a medias, con el carrito y un descuento si toca. Y, sobre todo, la cuenta de cuántos volvieron y por cuánto dinero.</p>
+      <p data-i18n="a3p">Para tiendas WooCommerce (Shopify ya trae la suya gratis). Una secuencia de avisos al comprador que se quedó a medias, con el carrito y un descuento si toca. Y, sobre todo, la cuenta de cuántos volvieron y por cuánto dinero.</p>
       <ul class="checklist">
         <li data-i18n="a3l1"><b>Secuencia</b> los pasos y los textos los decides tú</li>
         <li data-i18n="a3l2"><b>Consentimiento</b> solo escribe a quien lo aceptó</li>
-        <li data-i18n="a3l3"><b>Marca</b> el email lo firma tu tienda, no Denoro</li>
+        <li data-i18n="a3l3"><b>Marca</b> sale desde el email de tu tienda, no desde Denoro</li>
       </ul>
       <dl class="auto-meta">
         <div><dt data-i18n="mCada">Cada</dt><dd data-i18n="a3c">30 minutos</dd></div>
@@ -229,9 +229,9 @@
  "itemListElement":[
   {"@type":"ListItem","position":1,"item":{"@type":"Service","name":"Fichas de producto en bloque","description":"Genera títulos SEO, meta descripciones y fichas en HTML a partir del catálogo, listas para importar, con un motor de plantilla o con OpenAI usando la clave del cliente.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
   {"@type":"ListItem","position":2,"item":{"@type":"Service","name":"Sincronización de stock del proveedor","description":"Ajusta las existencias de la tienda con el feed del proveedor, con frenos de seguridad si el feed llega mal.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
-  {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Recuperación de carritos abandonados","description":"Secuencia de avisos, firmada por la tienda, a los compradores que dieron su consentimiento, y cuenta de los carritos recuperados.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
+  {"@type":"ListItem","position":3,"item":{"@type":"Service","name":"Recuperación de carritos abandonados","description":"Para WooCommerce: secuencia de avisos, enviada desde el email de la tienda, a los compradores que dieron su consentimiento, y cuenta de los carritos recuperados.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
   {"@type":"ListItem","position":4,"item":{"@type":"Service","name":"Vigilancia de reseñas","description":"Aviso el mismo día de cada reseña negativa nueva (reseñas de WooCommerce o páginas públicas cuyo robots.txt lo permita) y resumen semanal.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
-  {"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Facturas y albaranes automáticos","description":"Numeración correlativa, desglose de IVA, PDF con la marca de la tienda y envío al cliente. No es software certificado Verifactu.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
+  {"@type":"ListItem","position":5,"item":{"@type":"Service","name":"Facturas y albaranes automáticos","description":"Numeración correlativa, desglose de IVA, PDF con la marca de la tienda y envío al cliente. No es software certificado Verifactu: válido hasta 2027, después albaranes y libro en CSV.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
   {"@type":"ListItem","position":6,"item":{"@type":"Service","name":"Monitor de precios y stock de la competencia","description":"Vigilancia de precios y stock de tiendas competidoras con avisos por Telegram y email.","provider":{"@id":"https://denoroautomations.com/#negocio"}}},
   {"@type":"ListItem","position":7,"item":{"@type":"Service","name":"Informe semanal de la tienda","description":"Informe en PDF con ventas, productos destacados y avisos de stock, cada lunes.","provider":{"@id":"https://denoroautomations.com/#negocio"}}}]}
 </script>

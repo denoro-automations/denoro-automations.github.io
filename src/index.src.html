@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Automatizaciones para tiendas online con n8n · Denoro Automations</title>
-<meta name="description" content="Siete automatizaciones probadas para tiendas Shopify y WooCommerce: precios de la competencia, stock del proveedor, facturas, carritos abandonados, reseñas, fichas de producto e informe semanal. Desde 149 € y con precio cerrado.">
+<meta name="description" content="Automatizaciones con n8n para tiendas Shopify y WooCommerce: precios de la competencia, fichas de producto, stock del proveedor, reseñas, carritos abandonados, facturas e informe semanal. Desde 149 € y con precio cerrado.">
 <link rel="canonical" href="https://denoroautomations.com/">
 <link rel="alternate" hreflang="es" href="https://denoroautomations.com/">
 <link rel="alternate" hreflang="en" href="https://denoroautomations.com/?lang=en">
@@ -44,7 +44,7 @@
   <div class="hero-copy">
     <p class="eyebrow" data-i18n="heroEyebrow">Automatización para tiendas online</p>
     <h1 data-i18n="heroTitle">Lo que tu tienda repite cada semana, que lo haga sola.</h1>
-    <p class="lead" data-i18n="heroLead">Monto sobre n8n siete automatizaciones ya probadas para Shopify y WooCommerce. Precio cerrado, y la ves funcionando en modo prueba antes de que toque tu tienda.</p>
+    <p class="lead" data-i18n="heroLead">Monto sobre n8n siete automatizaciones para tiendas Shopify y WooCommerce. Precio cerrado, y la ves funcionando con datos de ejemplo antes de que toque tu tienda.</p>
     <div class="cta-row">
       <a class="btn primary" href="#presupuesto" data-i18n="heroCta1">Pedir presupuesto</a>
       <a class="btn" href="#automatizaciones" data-i18n="heroCta2">Ver las automatizaciones</a>
@@ -93,14 +93,14 @@
       <div class="card-shot"><img src="assets/auto-facturas.webp" width="800" height="500" alt="Factura en PDF con numeración, datos del cliente y líneas con su IVA" data-alt-en="PDF invoice with numbering, customer details and lines with their VAT (sample in Spanish)" loading="lazy" decoding="async"></div>
       <p class="card-k" data-i18n="a5k">Administración</p>
       <h3><a href="automatizaciones.html#facturas" data-i18n="a5t">Facturas y albaranes</a></h3>
-      <p data-i18n="g5">Numera, desglosa el IVA y manda el PDF al cliente. Un pedido nunca se factura dos veces.</p>
+      <p data-i18n="g5">Numera, desglosa el IVA y manda el PDF al cliente. Sirve hasta que te obligue Verifactu (2027); después, albaranes y libro en CSV.</p>
       <p class="card-meta"><span data-i18n="mCada">Cada</span> <span data-i18n="a5c">1 hora</span></p>
     </li>
     <li class="card reveal">
       <div class="card-shot"><img src="assets/auto-carritos.webp" width="800" height="500" alt="Resumen de carritos abandonados: avisos enviados, dinero en juego y carritos recuperados" data-alt-en="Abandoned cart summary: reminders sent, money at stake and carts recovered (sample in Spanish)" loading="lazy" decoding="async"></div>
       <p class="card-k" data-i18n="a3k">Ventas</p>
       <h3><a href="automatizaciones.html#carritos" data-i18n="a3t">Carritos abandonados</a></h3>
-      <p data-i18n="g3">Recuerda el carrito a quien dio su consentimiento y te cuenta cuánto has recuperado.</p>
+      <p data-i18n="g3">Para WooCommerce: recuerda el carrito a quien dio su consentimiento, desde el email de tu tienda, y te cuenta cuánto has recuperado.</p>
       <p class="card-meta"><span data-i18n="mCada">Cada</span> <span data-i18n="a3c">30 minutos</span></p>
     </li>
     <li class="card reveal">
@@ -147,7 +147,7 @@
       <p data-i18n="how2p">Antes de que toque tu tienda, la automatización corre en modo prueba y te enseña lo que haría. Si algo no te cuadra, se ajusta antes de ponerla en marcha.</p></div></li>
     <li class="reveal"><span class="step-n num">03</span>
       <div><h3 data-i18n="how3t">La dejo en marcha y documentada</h3>
-      <p data-i18n="how3p">En mi servidor o en tu propio n8n. Te explico paso a paso cómo funciona, y durante las dos primeras semanas las correcciones son gratis.</p></div></li>
+      <p data-i18n="how3p">En tu propio n8n (n8n Cloud o un servidor tuyo), a tu nombre y documentada; el monitor, además, con su panel para que lo ajustes tú. Te explico paso a paso cómo funciona, y durante las dos primeras semanas las correcciones son gratis.</p></div></li>
   </ol>
 </div></section>
 
@@ -222,11 +222,10 @@
 <section id="precios"><div class="wrap">
   <p class="eyebrow reveal" data-i18n="priceEyebrow">Precios</p>
   <h2 class="reveal" data-i18n="priceTitle">Precio cerrado antes de empezar</h2>
-  <p class="lead reveal section-lead" data-i18n="priceLead">Tres paquetes, con el mismo precio para cualquier automatización. Lo que entra en cada uno depende de cuál elijas:</p>
+  <p class="lead reveal section-lead" data-i18n="priceLead">Tres paquetes para las dos que más se piden. Las demás van como extra, también con precio cerrado:</p>
 
   <div class="tabs reveal" role="tablist" aria-label="Tipo de automatización" data-i18n-label="tabsLabel">
     <button type="button" role="tab" id="tab-monitor" aria-controls="plan-monitor" aria-selected="true" data-i18n="tab1">Monitor de precios</button>
-    <button type="button" role="tab" id="tab-tienda" aria-controls="plan-tienda" aria-selected="false" tabindex="-1" data-i18n="tab2">Stock, facturas, carritos y reseñas</button>
     <button type="button" role="tab" id="tab-fichas" aria-controls="plan-fichas" aria-selected="false" tabindex="-1" data-i18n="tab3">Fichas de producto</button>
   </div>
 
@@ -279,53 +278,6 @@
     </div>
   </div>
 
-  <div class="tabpanel" role="tabpanel" id="plan-tienda" aria-labelledby="tab-tienda" hidden>
-    <h3 class="tabpanel-title" data-i18n="tab2">Stock, facturas, carritos y reseñas</h3>
-    <div class="plans">
-      <article class="plan">
-        <header>
-          <p class="plan-tag" data-i18n="pBasic">Básico</p>
-          <p class="price num" data-i18n="p1price">149 €</p>
-          <p class="plan-sub" data-i18n="p1sub">Entrega en 4 días · 1 revisión</p>
-        </header>
-        <p class="plan-what" data-i18n="t1w">Una a elegir, en modo informe</p>
-        <ul>
-          <li data-i18n="t1f1">Stock del proveedor en modo prueba: te dice qué cambiaría, sin tocar la tienda</li>
-          <li data-i18n="t1f2">Avisos de reseñas de tu WooCommerce o de 1 página que lo permita</li>
-          <li data-i18n="t1f3">Recordatorio de carrito abandonado de 1 paso</li>
-        </ul>
-        <a class="btn" href="#presupuesto" data-auto="stock" data-plan="basico" data-i18n="planCta">Pedir presupuesto</a>
-      </article>
-      <article class="plan featured">
-        <header>
-          <p class="plan-tag" data-i18n="pStd">Estándar · recomendado</p>
-          <p class="price num" data-i18n="p2price">349 €</p>
-          <p class="plan-sub" data-i18n="p2sub">Entrega en 6 días · 2 revisiones</p>
-        </header>
-        <p class="plan-what" data-i18n="t2w">Una a elegir, funcionando en tu tienda</p>
-        <ul>
-          <li data-i18n="t2f1">Stock del proveedor aplicado en la tienda, con sus frenos de seguridad</li>
-          <li data-i18n="t2f2">Facturas con PDF al cliente</li>
-          <li data-i18n="t2f3">Secuencia de carritos de 3 pasos con descuento</li>
-        </ul>
-        <a class="btn primary" href="#presupuesto" data-auto="stock" data-plan="estandar" data-i18n="planCta">Pedir presupuesto</a>
-      </article>
-      <article class="plan">
-        <header>
-          <p class="plan-tag" data-i18n="pPrem">Premium</p>
-          <p class="price num" data-i18n="p3price">599 €</p>
-          <p class="plan-sub" data-i18n="p3sub">Entrega en 8 días · 2 revisiones</p>
-        </header>
-        <p class="plan-what" data-i18n="t3w">Dos automatizaciones y soporte</p>
-        <ul>
-          <li data-i18n="t3f1">Dos a elegir entre stock del proveedor, facturas, carritos y reseñas</li>
-          <li data-i18n="t3f2">1 mes de mantenimiento incluido</li>
-        </ul>
-        <a class="btn" href="#presupuesto" data-auto="varias" data-plan="premium" data-i18n="planCta">Pedir presupuesto</a>
-      </article>
-    </div>
-  </div>
-
   <div class="tabpanel" role="tabpanel" id="plan-fichas" aria-labelledby="tab-fichas" hidden>
     <h3 class="tabpanel-title" data-i18n="tab3">Fichas de producto</h3>
     <div class="plans">
@@ -374,20 +326,34 @@
     </div>
   </div>
 
-  <p class="note reveal" data-i18n="priceNote">Todos los paquetes incluyen documentación, explicación paso a paso y dos semanas de correcciones gratis después de la entrega. El informe semanal va incluido en el Premium del monitor; suelto o junto con otras, te paso presupuesto cerrado. Mantenimiento opcional: 99 €/mes, y si algo deja de funcionar lo arreglo yo.</p>
+  <div class="extras reveal">
+    <h3 data-i18n="exT">Las demás, como extra desde 149 €</h3>
+    <p data-i18n="exP">Cada una instalada en tu n8n y conectada a tu tienda. Te paso el precio cerrado cuando me cuentas qué necesitas.</p>
+    <ul class="chips">
+      <li data-i18n="a2t">Stock del proveedor</li>
+      <li data-i18n="a4t">Vigilancia de reseñas</li>
+      <li data-i18n="a7t">Informe semanal de tu tienda</li>
+      <li data-i18n="exC">Carritos abandonados (WooCommerce)</li>
+      <li data-i18n="a5t">Facturas y albaranes</li>
+    </ul>
+    <p class="hint" data-i18n="exN">Carritos solo para WooCommerce: Shopify ya trae los suyos gratis. Las facturas no son un programa certificado Verifactu, así que sirven hasta que te obligue (1 de enero de 2027 si eres sociedad, 1 de julio de 2027 si eres autónomo).</p>
+    <a class="btn" href="#presupuesto" data-auto="varias" data-i18n="exCta">Pedir presupuesto de un extra</a>
+  </div>
+
+  <p class="note reveal" data-i18n="priceNote">Todo incluye documentación, explicación paso a paso y dos semanas de correcciones gratis después de la entrega. Mantenimiento opcional de lo que tengas instalado en tu n8n: 99 €/mes, y si algo deja de funcionar lo arreglo yo.</p>
 </div></section>
 
 <section id="faq"><div class="wrap">
   <p class="eyebrow reveal" data-i18n="faqEyebrow">Preguntas</p>
   <h2 class="reveal" data-i18n="faqTitle">Lo que suelen preguntarme</h2>
   <div class="faq reveal">
-    <details open><summary data-i18n="q1">¿Funciona con mi tienda?</summary><p data-i18n="a1">Todas trabajan con Shopify y WooCommerce. Las fichas de producto también aceptan un CSV, y el stock del proveedor lee su feed en CSV o XML. Si usas otra plataforma, dímelo y lo compruebo antes de cobrarte nada.</p></details>
-    <details><summary data-i18n="q2">¿Necesito un servidor o saber de informática?</summary><p data-i18n="a2">No. Tú solo recibes los avisos, los informes o los PDF donde te vayan mejor: email o Telegram. Si prefieres que todo corra en tu propio servidor o en tu cuenta de n8n, también lo monto ahí y te lo dejo documentado.</p></details>
+    <details open><summary data-i18n="q1">¿Funciona con mi tienda?</summary><p data-i18n="a1">El monitor vigila tiendas Shopify y WooCommerce de tu competencia, y productos sueltos de casi cualquier web. Las demás se instalan en tu n8n y se conectan a tu Shopify o WooCommerce; las fichas también aceptan un CSV y el stock lee el feed del proveedor en CSV o XML. Antes de la entrega la pruebo con tu tienda en modo prueba, y si usas otra plataforma lo compruebo antes de cobrarte nada.</p></details>
+    <details><summary data-i18n="q2">¿Necesito un servidor o saber de informática?</summary><p data-i18n="a2">No hace falta saber de informática. Se instala en tu propia cuenta de n8n (n8n Cloud o un servidor tuyo); si no tienes, te ayudo a abrirla y te la dejo documentada. Tú recibes los avisos, los informes o los PDF donde te vayan mejor: email o Telegram.</p></details>
     <details><summary data-i18n="q3">¿Qué pasa si algo cambia o falla?</summary><p data-i18n="a3">Están hechas para avisar en vez de quedarse calladas: el monitor te dice cuándo deja de poder leer un enlace, y el stock se bloquea solo si el feed del proveedor llega roto. Durante las dos primeras semanas lo arreglo gratis; después, con el mantenimiento mensual.</p></details>
     <details><summary data-i18n="q4">¿Cuánto tarda y cómo se paga?</summary><p data-i18n="a4">Entre 4 y 8 días según el paquete. Antes de empezar te confirmo el alcance por escrito, y se paga la mitad al principio y la otra mitad al entregar.</p></details>
     <details><summary data-i18n="q5">¿Es legal vigilar los precios de la competencia?</summary><p data-i18n="a5">Solo leo datos públicos y no personales: nombre del producto, precio, stock y enlace. Lo mismo que verías entrando en la web. Respeto el robots.txt de cada tienda, voy despacio para no molestar a sus servidores y no toco nada que esté detrás de un login. Si una web dice que no, no la vigilo.</p></details>
     <details><summary data-i18n="q6">¿Puedo vigilar Amazon o Zara?</summary><p data-i18n="a6">Las webs muy grandes bloquean las consultas automáticas, así que no las prometo. Para marketplaces suele haber alternativas (sus propias APIs o informes oficiales) y te lo digo antes de que gastes dinero.</p></details>
-    <details><summary data-i18n="q7">¿Los carritos y las facturas cumplen la normativa?</summary><p data-i18n="a7">Los recordatorios de carrito solo se envían a quien dio su consentimiento, y el email lo firma tu tienda. Las facturas llevan numeración correlativa y el IVA desglosado, pero no es un software certificado Verifactu: antes de empezar te explico qué implica para tu caso.</p></details>
+    <details><summary data-i18n="q7">¿Los carritos y las facturas cumplen la normativa?</summary><p data-i18n="a7">Los recordatorios de carrito solo se envían a quien dio su consentimiento, y salen desde el email de tu tienda porque corren en tu propio n8n. Las facturas llevan numeración correlativa y el IVA desglosado, pero no es un software certificado Verifactu: sirve hasta que te obligue (1 de enero de 2027 si eres sociedad, 1 de julio de 2027 si eres autónomo) y a partir de ahí la dejo en albaranes y libro en CSV para tu programa de facturación.</p></details>
   </div>
 </div></section>
 
@@ -464,12 +430,12 @@
   "url":"https://denoroautomations.com/","email":"manelfernandezp1@gmail.com","image":"https://denoroautomations.com/assets/og.jpg",
   "areaServed":"ES","availableLanguage":["es","en"],"sameAs":["https://github.com/denoro-automations"],
   "hasOfferCatalog":{"@type":"OfferCatalog","name":"Paquetes","itemListElement":[
-    {"@type":"Offer","name":"Básico","price":"149","priceCurrency":"EUR","description":"Una automatización: monitor de hasta 3 enlaces, stock del proveedor en modo prueba, avisos de reseñas, un recordatorio de carrito o fichas de hasta 100 productos. Entrega en 4 días."},
-    {"@type":"Offer","name":"Estándar","price":"349","priceCurrency":"EUR","description":"Una automatización funcionando: monitor de hasta 10 enlaces con tus precios, stock aplicado en la tienda, facturas con PDF, secuencia de carritos o fichas de hasta 500 productos. Entrega en 6 días."},
-    {"@type":"Offer","name":"Premium","price":"599","priceCurrency":"EUR","description":"Monitor de hasta 30 enlaces con informe semanal, dos automatizaciones de tienda o fichas de hasta 2.000 productos cada lunes, con 1 mes de mantenimiento. Entrega en 8 días."}]}},
+    {"@type":"Offer","name":"Básico","price":"149","priceCurrency":"EUR","description":"Monitor de hasta 3 enlaces o fichas de hasta 100 productos. Entrega en 4 días."},
+    {"@type":"Offer","name":"Estándar","price":"349","priceCurrency":"EUR","description":"Monitor de hasta 10 enlaces con tus precios o fichas de hasta 500 productos. Entrega en 6 días."},
+    {"@type":"Offer","name":"Premium","price":"599","priceCurrency":"EUR","description":"Monitor de hasta 30 enlaces con informe semanal o fichas de hasta 2.000 productos cada lunes, con 1 mes de mantenimiento. Entrega en 8 días."}]}},
  {"@type":"FAQPage","@id":"https://denoroautomations.com/#faq","mainEntity":[
-  {"@type":"Question","name":"¿Funciona con mi tienda?","acceptedAnswer":{"@type":"Answer","text":"Todas las automatizaciones trabajan con Shopify y WooCommerce. Las fichas de producto también aceptan un CSV y el stock del proveedor lee su feed en CSV o XML. Con otras plataformas se comprueba antes de cobrar nada."}},
-  {"@type":"Question","name":"¿Necesito un servidor o saber de informática?","acceptedAnswer":{"@type":"Answer","text":"No. Recibes los avisos, informes o PDF por email o Telegram. Si lo prefieres, se instala en tu propio servidor o en tu cuenta de n8n, documentado."}},
+  {"@type":"Question","name":"¿Funciona con mi tienda?","acceptedAnswer":{"@type":"Answer","text":"El monitor vigila tiendas Shopify y WooCommerce de la competencia y productos sueltos de casi cualquier web. Las demás se instalan en el n8n del cliente y se conectan a su Shopify o WooCommerce; las fichas también aceptan un CSV y el stock lee el feed del proveedor en CSV o XML. Con otras plataformas se comprueba antes de cobrar nada."}},
+  {"@type":"Question","name":"¿Necesito un servidor o saber de informática?","acceptedAnswer":{"@type":"Answer","text":"No hace falta saber de informática. Se instala en la cuenta de n8n del cliente (n8n Cloud o un servidor propio), documentado, y los avisos, informes o PDF llegan por email o Telegram."}},
   {"@type":"Question","name":"¿Cuánto tarda?","acceptedAnswer":{"@type":"Answer","text":"Entre 4 y 8 días según el paquete, con el alcance confirmado por escrito antes de empezar. Se paga la mitad al principio y la otra mitad al entregar."}},
   {"@type":"Question","name":"¿Es legal vigilar los precios de la competencia?","acceptedAnswer":{"@type":"Answer","text":"Solo se leen datos públicos y no personales: nombre del producto, precio, stock y enlace. Se respeta el robots.txt de cada tienda y no se accede a nada que esté detrás de un login."}}]}]}
 </script>
